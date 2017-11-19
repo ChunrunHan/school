@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/deal.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/white_car_media.css"/>
+		<link href="css/red_packet_detail.css" rel="stylesheet" />
+		<link href="css/income_expenditure.css" rel="stylesheet" />
+		<!--<script src="js/lib/echarts.min.js"></script>-->
+		<style type="text/css">
+			.top-chart,.top-money{
+				background: white;
+			}
+			.top-money{
+				margin: 10px auto;
+				height: 55px;
+				line-height: 55px;
+				padding: 0px 15px;
+			}
+			.top-money img{
+				position: relative;
+				width: 35px;
+				height: 35px;
+				top:10px;
+				margin-right: 5px;
+			}
+			.top-money span:nth-of-type(2){
+				/*color: red;*/
+				position: absolute;
+				right: 15px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+
+		<div class="mui-scroll-wrapper mui-content income-detail" id="pullrefresh">
+			<div class="mui-scroll">
+			
+				<!--<div class="top-money">
+					<img src="images/money.svg" alt="" />
+					<span>小区账户余额</span>
+					<span>1031 <span>元</span></span>
+				</div>-->
+			
+				<!--<div class="top-chart" id="main">
+					
+				</div>-->
+				<!--<div class="goods-title">详情</div>-->
+				<ul class="mui-table-view mui-table-view-chevron income-list">
+					<!--<li class="red-detail">
+						<span class="mui-icon mui-icon-forward"></span>
+						<img class="detail-logo" src="{{img}}" alt="" width="35px" height="35px"/>
+						<div class="detail-info">
+							<span class="detail-name">车位出租租金</span>
+						</div>
+						<span class="detail-time">2017-06-21</span>
+						<div class="detail-money">+<span class="show-money">150.00</span>元</div>
+					</li>
+					
+					<li class="red-detail">
+						<span class="mui-icon mui-icon-forward"></span>
+						<img class="detail-logo" src="images/carzu.svg" alt="" width="35px" height="35px"/>
+						<div class="detail-info">
+							<span class="detail-name">车位出租租金</span>
+						</div>
+						<span class="detail-time">2017-06-21</span>
+						<div class="detail-money">+<span>150.00</span>元</div>
+					</li>
+					
+					<li class="red-detail">
+						<span class="mui-icon mui-icon-forward"></span>
+						<img class="detail-logo" src="images/zu.svg" alt="" width="35px" height="35px"/>
+						<div class="detail-info">
+							<span class="detail-name">车位出租租金</span>
+						</div>
+						<span class="detail-time">2017-06-21</span>
+						<div class="detail-money">+<span>150.00</span>元</div>
+					</li>-->
+
+				</ul>
+			</div>
+			<div class="search-result">
+				<img class="" src="images/smile.svg" alt="" width="40px" height="40px" />
+				<p>当前没有收入详细信息</p>
+			</div>
+		</div>
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/finance_manage_income']);
+		</script>
+	</body>
+
+</html>

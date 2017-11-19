@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.picker.min.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/temporary_vehicle.css" />
+		<style type="text/css">
+			#cityname {
+				right: 94px;
+				transform: rotate(90deg);
+				margin-top: -10px;
+				font-size: 21px;
+				/*background: rgba(143, 35, 35, 0.86);*/
+			}
+			
+			#selectCity {
+				text-align: center !important;
+				width: 50px !important;
+				padding-right: 0px !important;
+			}
+			
+			#carnum {
+				width: 100px !important;
+				padding-right: 20px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="icon-back mui-pull-left mui-action-back goback"></a>
+			<h1 class="mui-title seller-name mui-ellipsis">车辆反查</h1>
+			<!--<a class="mui-pull-right mui-action-back feedback-save font-16px">保存</a>-->
+		</header>
+
+		<div class="mui-content">
+			<form class="mui-input-group" style="margin-top: 20px;">
+				<div class="mui-input-row">
+					<label>
+						车牌号码
+					</label>
+					<span class="mui-icon mui-icon-forward" id="cityname"></span>
+					<input id="carnum" maxlength="6" type="text" data-bind="priority" placeholder="车牌号" />
+					<input id="selectCity" type="text" readonly="" value="鲁" />
+				</div>
+			</form>
+
+			<button id="camera" type="button" class="mui-btn switch-commit mui-action-back" style="top:20px;position: relative;">拍照</button>
+			<button id="search" type="button" class="mui-btn switch-commit mui-action-back" style="top:40px;position: relative;">查找</button>
+		</div>
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/vehicle_reverse_checking']);
+		</script>
+
+		<script src="js/lib/mui.min.js"></script>
+		<script src="js/lib/mui.picker.js"></script>
+		<script src="js/lib/mui.picker.min.js"></script>
+		<script src="js/lib/mui.poppicker.js"></script>
+		<script src="js/lib/carCity.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.picker.min.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/inout_record.css" />
+		<style type="text/css">
+			.mui-scroll-wrapper {
+				position: absolute;
+				z-index: 2;
+				top: 125px;
+				bottom: 0;
+				left: 0;
+				overflow: hidden;
+				width: 100%;
+			}
+			
+			.mui-table-view:before {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: transparent;
+			}
+			
+			.mui-table-view:after {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: transparent;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back icon-back mui-pull-left"></a>
+			<h1 class="mui-title seller-name mui-ellipsis">进出记录</h1>
+			<!--<a class="mui-pull-right zone-save font-16px">确认</a>-->
+		</header>
+
+		<div style="position: fixed; width: 100%; top: 45px;z-index: 100;">
+			<div style="height: 55px; background: white; position: relative;">
+				<div class="server-box">
+					<span class="mui-icon mui-icon-search" style="position: relative;top:8px;left: 8px;"></span>
+					<span class="mui-icon mui-icon-forward" id="cityname"></span>
+					<input id="carnum" maxlength="6" type="text" data-bind="priority" placeholder="车牌号" />
+					<input id="selectCity" type="text" readonly="" value="鲁" />
+					<input id="selectMode" type="text" readonly="" value="全部车辆" />
+					<span class="mui-icon mui-icon-forward" id="citymode"></span>
+				</div>
+				<div class="search-btn">搜索</div>
+
+			</div>
+
+		</div>
+		<div class="goods-title" style="margin-top: 110px;">记录列表：</div>
+
+		<div id="refreshList" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="zone-area mui-table-view mui-table-view-chevron">
+					<!--<li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li>
+					
+					<li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li><li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/pass.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门进口</p>
+					</li>
+					<li class="inout-list">
+						<img class="inout-img" src="images/reject.svg" alt="" width="30px" />
+						<p class="inout-car">鲁B 12345</p>
+						<p class="inout-time">2017-8-18 09:57</p>
+						<p class="inout-build">5-2-103</p>
+						<p class="inout-position">西大门出口</p>
+					</li>-->
+					
+				</ul>
+
+				<div class="search-result" style="margin-top: 100px;border-top: -2px;">
+					<img class="" src="images/noall.svg" alt="" width="40px" height="40px" />
+					<p>当前没有进出记录</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!--选择进出场-->
+		<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view" id='server'>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='0'>
+						全部车辆
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='1'>
+						允许通行
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='2'>
+						禁止通行
+					</a>
+				</li>
+
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#sheet1"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="show-box mui-hidden">
+			<img src="images/default_goods.png" alt="" class="img-show" />
+		</div>
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/inout_record']);
+		</script>
+		<script src="js/lib/mui.min.js"></script>
+		<script src="js/lib/mui.picker.js"></script>
+		<script src="js/lib/mui.picker.min.js"></script>
+		<script src="js/lib/mui.poppicker.js"></script>
+		<script src="js/lib/carCity.js"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,52 @@
+.count-box{
+	position: absolute;
+	right: 9px;
+	top: 113px;
+}
+#textarea{
+	margin-bottom: -6px;
+	padding-bottom: 15px;
+	border: 0px;
+}
+.font-16px{
+	font-size: 16px;
+}
+input{
+	border-left: 0px !important;
+	border-right: 0px !important;
+	margin-bottom: 0px !important;
+}
+#feedback-name{
+	border: 0px;
+}
+#feedback-phone{
+	margin-top: 1px;
+	border: 0px;
+}
+.title{
+	font-size: 14px;
+	line-height: 25px;
+	padding-left: 10px;
+	height: 25px;
+	color: #BBBBBB;
+}
+
+input::-webkit-input-placeholder {
+	text-align: left;
+}
+
+input:-moz-placeholder {
+	text-align: left;
+}
+
+input::-moz-placeholder {
+	text-align: left;
+}
+
+input:-ms-input-placeholder {
+	text-align: left;
+}
+
+input {
+	text-align: left;
+}

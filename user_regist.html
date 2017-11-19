@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/goods_list_add.css" rel="stylesheet" />
+		<link href="css/seller_edit.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.picker.min.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style type="text/css">
+			#seller-submit {
+				bottom: -70px;
+				margin-bottom: 20px;
+			}
+			.server-list{
+				color: #000000;
+				font-size: 15px
+			}
+			.forward-box{
+				position: relative;
+			}
+			.forward-show{
+				position: absolute;
+				right: -5px;
+				top:-3px;
+				color: gainsboro;
+			}
+			#seller-classify,#seller-identity{
+				padding-right: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="icon-back mui-pull-left mui-action-back"></a>
+			<h1 class="mui-title">用户注册</h1>
+			<!--<a class="mui-pull-right mui-action-back goods-save font-16px">提交</a>-->
+		</header>
+
+		<div class="mui-content">
+			<div class="mui-scroll">
+				<div class="goods-title">基本信息</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label> 
+							用户名
+						</label>
+						<input id="name" maxlength="20" type="text" data-bind="name" placeholder="请输入用户名" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							手机号
+						</label>
+						<input id="mobile" maxlength="11" type="tel" data-bind="mobile|mobile|手机号格式不正确" placeholder="请输入手机号" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							密码
+						</label>
+						<input id="password" min="6" maxlength="16" type="password" placeholder="请输入密码6-16位" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							确认密码
+						</label>
+						<input id="repassword" min="6" maxlength="16" type="password" placeholder="请确认密码" />
+					</div>
+					
+					
+					
+					
+					
+				</form>
+
+				
+				<button id='seller-submit' class="mui-btn switch-commit seller-save">提交</button>
+
+			</div>
+
+		</div>
+
+		
+		
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/user_regist']);
+		</script>
+	</body>
+
+</html>

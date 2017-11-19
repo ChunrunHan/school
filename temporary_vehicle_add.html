@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.picker.min.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/temporary_vehicle.css" />
+		<style type="text/css">
+			#cityname {
+				right: 130px;
+				transform: rotate(90deg);
+				margin-top: -10px;
+				font-size: 21px;
+				/*background: rgba(143, 35, 35, 0.86);*/
+			}
+			
+			#selectCity {
+				text-align: center !important;
+				width: 50px !important;
+				padding-right: 0px !important;
+				position: relative;
+				right: 50px;
+			}
+			
+			/*#carnum {
+				width: 100px !important;
+				padding-right: 20px !important;
+				position: relative;
+				right: 50px;
+			}*/
+			#carnum {
+			    width: 85px !important;
+			    padding-right: 10px !important;
+			    position: relative;
+			    right: 50px;
+			}
+			.getcar{
+				position: absolute;
+				right: 5px;
+				top:6px;
+				padding: 5px 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="icon-back mui-pull-left mui-action-back goback"></a>
+			<h1 class="mui-title seller-name mui-ellipsis">新增临时车辆</h1>
+			<a class="mui-pull-right mui-action-back feedback-save font-16px">保存</a>
+		</header>
+
+		<div class="mui-content">
+			<div class="goods-title">工作岗位</div>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>
+						入口位置
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-enter" style="padding-right: 20px;" type="text" data-bind="position" readonly="" placeholder="请选择入口位置" />
+				</div>
+			</form>
+			<div class="goods-title">临时车信息</div>
+			<form class="mui-input-group">
+				<!--<div class="mui-input-row">
+					<label>
+						车牌号码
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-carnum" style="padding-right: 20px;" type="text" data-bind="" readonly="" placeholder="请选择车牌号码" />
+				</div>-->
+				<div class="mui-input-row">
+					<label>
+						车牌号码
+					</label>
+					<!--<span class="mui-icon mui-icon-forward" id="cityname"></span>-->
+					<input id="carnum" maxlength="6" type="text" data-bind="carnum" readonly="" placeholder="车牌号" />
+					<input id="selectCity" type="text" readonly="" value="鲁" />
+					<!--<button id="selectCar" class="getcar">获取</button>-->
+					<span id="selectCar" class="mui-icon mui-icon-forward"></span>
+				</div>
+				
+				<div class="mui-input-row" style="display: none;">
+					<label>
+						进场时间
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="carIn" style="padding-right: 20px;" readonly="" type="text" data-bind="intime" placeholder="请选择进场时间" />
+				</div>
+				<div class="mui-input-row">
+					<label style="width: 42%;">
+						预计出场时间
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="carOut" style="padding-right: 20px; width: 58%;" readonly="" type="text" data-bind="outime" placeholder="请选择出场时间" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						联系电话
+					</label>
+					<img id="callguest" class="call-owner" tel="" src="images/telphone.svg" alt="" />
+					<input id="guestnum" style="padding-right: 20px" type="tel" size="11" maxlength="11" data-bind="phone" placeholder="请输入联系电话" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						来访目的
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-reason" style="padding-right: 20px;" type="text" readonly="" data-bind="reason" placeholder="请选择来访目的" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						拜访业主
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-owner" style="padding-right: 20px;" type="text" data-bind="owner" readonly="" placeholder="请选择拜访业主" />
+				</div>
+				<!--<div class="mui-input-row owner-phone" style="display: none;">
+					<label>
+						业主电话
+					</label>
+					<img id="callowner" class="call-owner" src="images/telphone.svg" alt="" />
+					<input id="ownernum" style="padding-right: 50px;" type="tel" data-bind="" maxlength="11" placeholder="请输入业主电话"/>
+				</div>-->
+			</form>
+
+			<button type="button" class="mui-btn switch-commit feedback-save mui-action-back" style="position: relative;margin-top: 40px;">保存并放行车辆</button>
+		</div>
+
+		<div id="sheet2" class="mui-popover mui-popover-bottom mui-popover-action ">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view" id='server'>
+				<li class="mui-table-view-cell">
+					<a class="reason-list" href="#sheet2" reason='1'>
+						走亲访友
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="reason-list" href="#sheet2" reason='2'>
+						维修装修
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="reason-list" href="#sheet2" reason='3'>
+						家政保洁
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="reason-list" href="#sheet2" reason='4'>
+						快递外卖
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="reason-list" href="#sheet2" reason='5'>
+						其他
+					</a>
+				</li>
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#sheet2"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+		<input type="hidden" id="serviceStart" data-bind="startTime">
+		<input type="hidden" id="serviceEnd" data-bind="endTime">
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/temporary_vehicle_add']);
+		</script>
+		<!--<script src="js/lib/mui.min.js"></script>-->
+		<script src="js/lib/carCity.js"></script>
+		<!--<script src="js/lib/mui.picker.js"></script>
+		<script src="js/lib/mui.picker.min.js"></script>
+		<script src="js/lib/mui.poppicker.js"></script>-->
+	</body>
+
+</html>

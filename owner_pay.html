@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/temporary_vehicle.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="icon-back mui-pull-left mui-action-back goback"></a>
+			<h1 class="mui-title seller-name mui-ellipsis">续租缴费</h1>
+		</header>
+
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>
+						小区
+					</label>
+					<input id="select-zone" style="padding-right: 20px !important;" readonly="" type="text" data-bind="name" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						楼栋
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-build" style="padding-right: 20px;" readonly="" type="text" data-bind="phone" placeholder="请点击选择楼栋" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						单元
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-unit" style="padding-right: 20px;" type="text" readonly="" data-bind="priority" placeholder="请点击选择单元" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						楼层
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-floor" style="padding-right: 20px;" type="text" readonly="" data-bind="priority" placeholder="请点击选择单元" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						房间
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-house" style="padding-right: 20px;" type="text" readonly="" data-bind="priority" placeholder="请点击选择房间" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						充值金额
+					</label>
+					<span class=""></span>
+					<!--<input id="user-money" type="text" class="mui-input-clear" maxlength="11" placeholder="0.00">-->
+					<input id="submit-money" style="padding-right: 20px !important;" type="number" data-bind="priority" placeholder="0.00" />
+				</div>
+			</form>
+
+			<button type="button" class="mui-btn switch-commit" style="top:345px">确认充值</button>
+		</div>
+
+	
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/owner_pay']);
+		</script>
+	</body>
+
+</html>

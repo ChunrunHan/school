@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/praise_property_sub.css" rel="stylesheet" />
+		<link href="css/feedback.css" rel="stylesheet" />
+		<link href="css/detail.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/comment.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<h1 class="mui-title">投诉详情</h1>
+			<a class="icon-back mui-pull-left mui-action-back"></a>
+		</header>
+
+		<div id="refreshList" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div class="mui-table-view mui-table-view-chevron" style="background: transparent;">
+
+					<div style="background: white; margin-bottom: 10px;" class="comment-top">
+
+						<div>
+							<div class="praise-user">
+								<img class="user-logo" src="" alt="" width="40px" height="40px" onerror="javascript:this.src='images/default_header.png'" />
+								<span class="user-name color-black"></span>
+								<span class="user-date"></span>
+
+								<p class="mui-pull-right">
+									<img class="praise-hand" src="images/praise.svg" width="22px" alt="" praise='{{praise}}' totalLikes="{{totalLikes}}" infoId="{{id}}" />
+									<span class="praise-num" id="{{id}}"></span>
+								</p>
+							</div>
+							<div class="praise-comment"></div>
+							<div class="content-img">
+								<img class="imgs" src="{{images}}" alt="" width="30%" height="auto" onerror="javascript:this.src='images/default_goods.png'">
+							</div>
+						</div>
+					</div>
+
+					<div class="income-tap">
+						<div><span class="select">评论 <b id="totalComments">0</b></span></div>
+						<div><span>赞 <b id="totalLikes">0</b></span></div>
+					</div>
+					<!--//	点赞-->
+					<div id="praise">
+						<ul class="mui-table-view mui-table-view-chevron praise-show praise-list" style="display: none;">
+
+							<!--<li>
+								<img class="user-logo" src="images/logo.jpg" alt="" width="40px" />
+								<span class="user-name color-black">Rain</span>
+								<span class="comment-time">4分钟前</span>
+							</li>
+							<li>
+								<img class="user-logo" src="images/logo.jpg" alt="" width="40px" />
+								<span class="user-name color-black">Rain</span>
+								<span class="comment-time">4分钟前</span>
+							</li>
+							<li>
+								<img class="user-logo" src="images/logo.jpg" alt="" width="40px" />
+								<span class="user-name color-black">Rain</span>
+								<span class="comment-time">4分钟前</span>
+							</li>-->
+
+						</ul>
+						<div class="search-result mui-hidden">
+							<img class="" src="images/noall.svg" alt="" width="40px" height="40px" />
+							<p>当前没有点赞信息</p>
+							<p></p>
+						</div>
+					</div>
+
+					<!--//	评论-->
+					<div id="comment">
+						<ul class="mui-table-view mui-table-view-chevron praise-show comment-list">
+							<!--<li>
+								<img class="user-logo" src="images/logo.jpg" alt="" width="40px" />
+								<span class="user-name color-black">Rain</span>
+								<p class="comment-text">回复 <span>dd</span>: <span>sjfdsjdsdklsjfdsjdsdklsdkldsklfklsjfdsjdsdklsdkldsklfklsjfdsjdsdklsdkldsklfklsjfdsjdsdklsdkldsklfklsdkldsklfkl</span></p>
+								<span class="comment-time">4分钟前</span>
+	
+							</li>
+							<li>
+								<img class="user-logo" src="images/logo.jpg" alt="" width="40px" />
+								<span class="user-name color-black">Rain</span>
+								<p class="comment-text">dd</p>
+								<span class="comment-time">4分钟前</span>
+							</li>
+							<li>
+								<img class="user-logo" src="images/logo.jpg" alt="" width="40px" />
+								<span class="user-name color-black">Rain</span>
+								<p class="comment-text">ddd</p>
+								<span class="comment-time">4分钟前</span>
+							</li>-->
+
+						</ul>
+						<div class="search-result mui-hidden">
+							<img class="" src="images/noall.svg" alt="" width="40px" height="40px" />
+							<p>当前没有评论内容</p>
+							<p></p>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="comment-box" style="z-index: 100;">
+			<input type="text" id="input-message" placeholder="发表评论" />
+			<button id="send-message">发送</button>
+		</div>
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/critica_property_detail']);
+		</script>
+	</body>
+
+</html>

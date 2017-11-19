@@ -1,0 +1,46 @@
+.seller-logo {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+}
+
+input[type=number]{
+ 	
+ }
+ input[type=text], input[type=number]{
+ 	border:0px;
+ 	text-align: right;
+ 	/*margin-left: 30px;*/
+ 	/*color: #A9A9A9;*/
+ }
+/*时间*/
+#serviceStart,#serviceEnd{
+	height: 49px;
+	width: 50px;
+}
+/*.count-box{
+	top: 62px
+}
+#description{
+	height: 80px;
+}*/
+
+.box {
+	width: 100%;
+	height: 160px;
+	background: #c01e2f;
+	text-align: center;
+}
+
+.img-logo {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-top: 15px;
+}
+.mui-input-row input{
+	padding-right: 20px !important;
+}

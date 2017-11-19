@@ -1,0 +1,163 @@
+{
+  "common_telephone.html": {
+    "resources": [
+      "common_telephone_sub.html"
+    ],
+    "refer": [
+      "common_telephone_sub.html"
+    ]
+  },
+  "index.html": {
+    "refer": [
+      "common_telephone.html",
+      "temporary_vehicle.html",
+      "property_announcement.html",
+      "white_record.html",
+      "black_record.html",
+      "praise_property.html",
+      "community_dynamics.html",
+      "advise_property.html",
+      "vehicle_management.html",
+      "critica_property.html"
+    ],
+    "resources": []
+  },
+  "temporary_vehicle.html": {
+    "resources": [
+      "temporary_vehicle_in_sub.html"
+    ],
+    "refer": [
+      "temporary_vehicle_warn_sub.html",
+      "temporary_vehicle_in_sub.html",
+      "temporary_vehicle_out_sub.html"
+    ]
+  },
+  "property_announcement.html": {
+    "resources": [
+      "property_announcement_sub.html"
+    ],
+    "refer": [
+      "property_announcement_sub.html"
+    ]
+  },
+  "common_telephone_sub.html": {
+    "refer": [
+      "common_telephone_edit.html"
+    ],
+    "resources": []
+  },
+  "white_record.html": {
+    "resources": [
+      "white_record_up.html"
+    ],
+    "refer": [
+      "white_record_vip.html",
+      "white_record_down.html",
+      "white_record_up.html"
+    ]
+  },
+  "black_record.html": {
+    "resources": [
+      "black_record_sub.html"
+    ],
+    "refer": [
+      "black_record_sub.html"
+    ]
+  },
+  "praise_property.html": {
+    "resources": [
+      "praise_property_sub.html"
+    ],
+    "refer": [
+      "praise_property_sub.html"
+    ]
+  },
+  "community_dynamics.html": {
+    "resources": [
+      "community_dynamics_sub.html"
+    ],
+    "refer": [
+      "community_dynamics_sub.html"
+    ]
+  },
+  "advise_property.html": {
+    "resources": [
+      "advise_property_sub.html"
+    ],
+    "refer": [
+      "advise_property_sub.html"
+    ]
+  },
+  "vehicle_management.html": {
+    "refer": [
+      "owner_car.html",
+      "expired_parking.html",
+      "select_floor.html",
+      "temporary_vehicle_add_build.html",
+      "select_unit.html",
+      "black_record_add.html",
+      "temporary_vehicle_detail.html",
+      "select_build.html",
+      "warn_car.html",
+      "white_record_add.html",
+      "temporary_vehicle_add_car.html",
+      "temporary_vehicle_add.html",
+      "select_house.html"
+    ],
+    "resources": []
+  },
+  "critica_property.html": {
+    "resources": [
+      "critica_property_sub.html"
+    ],
+    "refer": [
+      "critica_property_sub.html"
+    ]
+  },
+  "owner_car_parking_add.html": {
+    "refer": [
+      "select_place.html"
+    ]
+  },
+  "owner_car.html": {
+    "refer": [
+      "owner_car_parking_add.html",
+      "owner_car_detail.html"
+    ]
+  },
+  "expired_parking.html": {
+    "resources": [
+      "expired_parking_sub.html"
+    ],
+    "refer": [
+      "expired_parking_sub.html"
+    ]
+  },
+  "warn_car_sub.html": {
+    "refer": [
+      "warn_car_sub_detail.html"
+    ]
+  },
+  "warn_car.html": {
+    "resources": [
+      "warn_car_sub.html"
+    ],
+    "refer": [
+      "warn_car_sub.html"
+    ]
+  },
+  "owner_car_detail.html": {
+    "refer": [
+      "owner_car_add_edit.html",
+      "select_parking.html"
+    ]
+  },
+  "temporary_vehicle_add_car.html": {
+    "resources": [
+      "temporary_vehicle_add_car_sub.html"
+    ],
+    "refer": [
+      "temporary_vehicle_add_car_sub.html"
+    ]
+  }
+}

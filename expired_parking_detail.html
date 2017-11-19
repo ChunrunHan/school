@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.picker.min.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/temporary_vehicle.css" />
+		<style type="text/css">
+			#cityname {
+				right: 130px;
+				transform: rotate(90deg);
+				margin-top: -10px;
+				font-size: 21px;
+				/*background: rgba(143, 35, 35, 0.86);*/
+			}
+			
+			#selectCity {
+				text-align: center !important;
+				width: 50px !important;
+				padding-right: 0px !important;
+				position: relative;
+				right: 50px;
+			}
+			
+			/*#carnum {
+				width: 100px !important;
+				padding-right: 20px !important;
+				position: relative;
+				right: 50px;
+			}*/
+			#carnum {
+			    width: 85px !important;
+			    padding-right: 10px !important;
+			    position: relative;
+			    right: 50px;
+			}
+			.getcar{
+				position: absolute;
+				right: 5px;
+				top:6px;
+				padding: 5px 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="icon-back mui-pull-left mui-action-back goback"></a>
+			<h1 class="mui-title park-num mui-ellipsis"></h1>
+			<a class="mui-pull-right delcar font-16px">解除</a>
+		</header>
+
+		<div class="mui-content">
+			<div class="goods-title">基本信息</div>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>
+						当前房屋
+					</label>
+					<!--<span class="mui-icon mui-icon-forward"></span>-->
+					<input id="select-owner" style="padding-right: 20px !important;" type="text" data-bind="owner" readonly="" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						车场
+					</label>
+					<!--<span class="mui-icon mui-icon-forward"></span>-->
+					<input id="select-owner" style="padding-right: 20px !important;"  type="text" data-bind="parkingName" readonly="" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						车位属性
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="select-reason" style="padding-right: 20px;" type="text" readonly="" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						开始时间
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="carIn" style="padding-right: 20px;" readonly="" type="text" data-bind="startTime" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						结束时间
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="carOut" style="padding-right: 20px;" readonly="" type="text" data-bind="endTime" />
+				</div>
+				
+			</form>
+
+			<button type="button" class="mui-btn switch-commit feedback-save mui-action-back" style="position: relative;margin-top: 40px;">续租车位</button>
+		</div>
+		
+		<!--车位属性-->
+		<div id="sheet2" class="mui-popover mui-popover-bottom mui-popover-action ">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view" id='server'>
+				<li class="mui-table-view-cell">
+					<a class="reason-list" href="#sheet2" reason='2'>
+						业主自有车位
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="reason-list" href="#sheet2" reason='3'>
+						业主租用车位
+					</a>
+				</li>
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#sheet2"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+		<input type="hidden" id="serviceStart" data-bind="startTime">
+		<input type="hidden" id="serviceEnd" data-bind="endTime">
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/expired_parking_detail']);
+		</script>
+		<script src="js/lib/mui.min.js"></script>
+		<script src="js/lib/carCity.js"></script>
+		<script src="js/lib/mui.picker.js"></script>
+		<script src="js/lib/mui.picker.min.js"></script>
+		<script src="js/lib/mui.poppicker.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<script src="js/lib/mui.min.js"></script>
+		<style>
+			
+			* {
+				overflow: hidden;
+			}
+			body {
+				overflow: hidden;
+			}
+			
+			img {
+				width: 100%;
+				height: auto;
+			}
+			.img {
+				padding-top: 45px;
+			}
+			
+			#clip {
+				position: absolute;
+				top: 0;
+				left: 0;
+				border: 1px solid #f00;
+				overflow: hidden;
+			}
+			
+			#qiu {
+				width: 20px;
+				height: 20px;
+				border-radius: 20px;
+				background:#f00;
+				position: absolute;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<h1 class="mui-title seller-name">图片裁剪</h1>
+			<a class="mui-pull-left mui-action-back icon-back"></a>
+			<a class="mui-pull-right font-16px" id="save">保存</a>
+		</header>
+
+		<div id="clip"></div>
+		<div id="qiu"></div>
+		<div class="img">
+			<img id="img" src="" alt="">	
+		</div>
+
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/clip_img']);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/feedback.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<h1 class="mui-title">意见反馈</h1>
+			<a class="icon-back mui-pull-left mui-action-back"></a>
+			<a class="mui-pull-right mui-action-back feedback-save font-16px">提交</a>
+		</header>
+
+		<div class="mui-content">
+			<div class="goods-title">问题和意见</div>
+			<div class="mui-input-row">
+				<textarea id="textarea" rows="5" maxlength="200" placeholder="有什么问题反馈吗？"></textarea>
+				<p class="count-box"><span id="count-text">0</span><span>/200</span></p>
+				<p class="goods-title">联系方式</p>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<input type="text" id="feedback-name" class="mui-input-clear" maxlength="11" size="11" data-bind="name" placeholder="姓名">
+				</div>
+				<div class="mui-input-row">
+					<input type="tel" id="feedback-phone" class="mui-input-clear" maxlength="11" size="11"  data-bind="phone" placeholder="电话">
+				</div>
+			</form>
+		</div>
+		<div>
+			<button type="button" class="mui-btn switch-commit feedback-save mui-action-back" style="top:380px">提交反馈</button>
+		</div>
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/feedback']);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,102 @@
+.repair-all li{
+				background: #efeff4;
+				padding: 10px 10px;
+			}
+			.repar-box{
+				background: white;
+				width: 100%;
+				height: 110px;
+				border-radius: 10px;
+			}
+			.box-top{
+				position: relative;
+				height: 40px;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			.box-top img{
+				position: relative;
+				vertical-align: middle;
+				top:5px;
+				left: 15px;
+			}
+			.auto-color{
+				background: #91d7f0;
+			}
+			.repair-color{
+				background: #fda470;
+			}
+			.reject-color{
+				background: #ff6b6b;
+			}
+			.success-color{
+				background: #a8e067;
+			}
+			
+			.mui-icon-forward {
+			    position: absolute;
+			    right: 10px;
+			    top: 50%;
+			    margin-top: -15px;
+			    font-size: 30px;
+			    color: gainsboro;
+			}
+			.top-name{
+				position: absolute;
+				height: 40px;
+				line-height: 40px;
+				top: 0px;
+				right: 40px;
+				font-size: 15px;
+				color: white;
+				font-weight: 500;
+			}
+			.mui-icon-forward{
+				color: white;
+			}
+			.box-bottom{
+				height: 70px;
+				position: relative;
+			}
+			
+			.box-bottom .bot-img{
+				position: relative;
+				top:11px;
+				left: 15px;
+				border-radius: 50%;
+			}
+			.bot-content {
+				margin-left: 75px;
+				position: absolute;
+				top:0px;
+				height: 70px;
+			}
+			.bot-address{
+				font-size: 13px;
+				color: gray;
+				margin-top: 3px;
+			}
+			.bot-name{
+				font-size: 20px;
+			}
+			.bot-mobile{
+				color: #59c5eb;
+			}
+			.box-bottom .call-user{
+				position: relative;
+				top:-5px;
+			}
+			.bot-call{
+				position: relative;
+				top:5px;
+			}
+			.bot-info{
+				margin-top: 10px;
+			}
+			.repar-time{
+				position: absolute;
+				color: white;
+				top:0px;
+				left: 50px;
+				line-height: 40px;
+			}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<link href="css/feedback.css" rel="stylesheet" />
+		<link href="css/photo.css" rel="stylesheet" />
+		<style type="text/css">
+			.img-src{
+				height: 95px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back icon-back mui-pull-left"></a>
+			<h1 class="mui-title seller-name mui-ellipsis">物业公告</h1>
+			<a class="mui-pull-right feedback-save font-16px">提交</a>
+		</header>
+
+		<div class="mui-content">
+			<div class="goods-title">公告标题</div>
+			<input id="title" type="text" data-bind="title" placeholder="请输入公告标题" />
+			<div class="goods-title">公告内容</div>
+			<div style="position: relative;">
+				<textarea id="textarea" data-bind="text" rows="5" maxlength="200" placeholder="请输入公告内容"></textarea>
+				<p class="count-box"><span id="count-text">0</span><span>/200</span></p>
+			</div>
+			<!--图片部分-->
+			<div class="goods-title">公告图片</div>
+			<div class="img-all">
+				<!--<div class="img-box" id="" filename="">
+		    				<img src="images/decrease_4@3x.png" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>
+					<div class="img-box" id="" filename="">
+		    				<img src="images/decrease_4@3x.png" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>
+					<div class="img-box" id="" filename="">
+		    				<img src="images/decrease_4@3x.png" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>
+					<div class="img-box" id="" filename="">
+		    				<img src="images/bill.jpg" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>-->
+				<!--<div class="img-box" id="" filename="">
+		    				<img src="images/logo.jpg" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>
+					<div class="img-box" id="" filename="">
+		    				<img src="images/logo.jpg" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>
+					<div class="img-box" id="" filename="">
+		    				<img src="images/logo.jpg" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>
+					<div class="img-box" id="" filename="">
+		    				<img src="images/comment.svg" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>
+					<div class="img-box" id="" filename="" style="width: 30%;">
+		    				<img src="images/logo.jpg" class="img-src" alt="" data-preview-src="" data-preview-group="1"/>
+		    				<span class="del-img icon-quan" filename="">
+					</div>-->
+				<div class="img-add imgadd" style="width: 30%;">
+					<img src="images/iconfont-tianjia.png" alt="" width="100%" height="auto" />
+				</div>
+
+			</div>
+			<button type="button" class="mui-btn switch-commit feedback-save" style="position: relative; margin-top: 50px;">发布公告</button>
+		</div>
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/property_announcement_add']);
+		</script>
+	</body>
+
+</html>

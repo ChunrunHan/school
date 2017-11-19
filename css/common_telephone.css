@@ -1,0 +1,61 @@
+.tel-list li {
+	background: white;
+	border-bottom: 1px solid lightgray;
+	padding: 10px 15px;
+	position: relative;
+}
+
+.tel-list li p {
+	line-height: 20px;
+	color: black;
+}
+
+.tel-btn {
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	right: 10px !important;
+	left: auto;
+}
+
+.btn-box {
+	margin: 10px 5%;
+	text-align: center;
+}
+
+.btn-box button {
+	width: 40%;
+}
+
+.btn-box button:first-child {
+	margin-right: 10%;
+}
+
+.tel-box {
+	background: rgba(0, 0, 0, 0.5);
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	padding-top: 45px;
+}
+
+.add-title {
+	background: white;
+	text-align: center;
+	font-size: 20px;
+	padding: 15px;
+}
+
+.mybtn-red {
+	background: #dd524d;
+	border-left: 1px solid #f4511e;
+}
+
+.mybtn-orange {
+	background: #f0ad4e;
+}
+
+.tel-list li {
+	border-bottom: 0px;
+}

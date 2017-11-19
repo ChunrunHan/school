@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-table-view-chevron tel-list">
+					<!--<li>
+						<div class="car-number">鲁B 12345</div>
+						<img class="tel-btn" src="images/red-warn.svg" alt="" width="30px" />
+						<span class="mui-icon mui-icon-forward"></span>
+					</li>
+					<li>
+						<div class="car-number">鲁B 12345</div>
+						<img class="tel-btn" src="images/car.svg" alt="" width="30px" />
+						<span class="mui-icon mui-icon-forward"></span>
+					</li>-->
+				</ul>
+			</div>
+			
+			<div class="search-result">
+				<img src="images/smile.svg" alt="" width="40px" height="40px" />
+				<p>当前没有临时车辆</p>
+			</div>
+		</div>
+		
+	
+		
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/temporary_vehicle_sub']);
+		</script>
+	</body>
+
+</html>

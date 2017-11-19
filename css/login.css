@@ -1,0 +1,149 @@
+.mui-input-password {
+	width: 60% !important;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	float: left !important;
+}
+
+.mui-input-group label {
+	width: 32% !important;
+	color: gray;
+}
+
+.link-area {
+	text-align: center;
+	margin-top: 100px;
+	color: gray;
+}
+
+.mui-input-row label {
+	text-align: center;
+}
+
+#forget-password,
+#edit-password {
+	color: #b71a21;
+}
+
+.mui-input-group {
+	/*margin-top: 25px;*/
+}
+
+#login-btn,
+#edit-btn {
+	/*background: #F05141;
+	border: 0px;
+	color: white;*/
+	top: 365px
+}
+
+.spliter {
+	color: #BBBBBB;
+	padding: 0px 8px;
+}
+
+
+/*验证码*/
+
+#smscode {
+	width: 30%;
+}
+
+.smscode {
+	font-size: 17px;
+	line-height: 30px;
+	margin-top: 7px;
+	margin-right: 10px;
+	padding-left: 10px;
+	border-left: 1px solid gray;
+	color: #f05141;
+}
+
+
+/*倒计时*/
+
+.code {
+	width: 85px;
+	height: 19px;
+	text-align: center;
+	display: inline-block;
+}
+
+#user {
+	width: 15% !important;
+}
+
+.mui-input {
+	width: 60% !important;
+}
+
+.remember-pass {
+	color: #8f8f94;
+	/*height: 40px;
+	line-height: 20px;*/
+}
+
+#bottom .mui-table-view:before {
+	background-color: transparent;
+}
+
+#autoLogin {
+	margin-right: -7px;
+}
+
+#go-application {
+	color: #F05141;
+}
+
+.about-logo {
+	width: 100px;
+	height: 100px;
+	display: block;
+	border-radius: 20px;
+	margin: 30px auto;
+}
+
+input {
+	text-align: left;
+}
+
+
+/*placeholder左对齐*/
+
+::-webkit-input-placeholder {
+	text-align: left;
+}
+
+:-moz-placeholder {
+	text-align: left;
+}
+
+::-moz-placeholder {
+	text-align: left;
+}
+
+:-ms-input-placeholder {
+	text-align: left;
+}
+
+
+/*placeholder右对齐*/
+
+input::-webkit-input-placeholder {
+	text-align: left;
+}
+
+input:-moz-placeholder {
+	text-align: left;
+}
+
+input::-moz-placeholder {
+	text-align: left;
+}
+
+input:-ms-input-placeholder {
+	text-align: left;
+}

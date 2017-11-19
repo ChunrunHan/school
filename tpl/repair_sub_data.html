@@ -1,0 +1,44 @@
+<!--{{#dataList}}
+<li class="red-record" repairId="{{id}}" info="{{contact}}:{{phone}}:{{status}}:{{house.building}}:{{house.unit}}:{{house.floor}}:{{house.room}}:{{images}}">
+	<div class="record-img">
+		<img src="{{statusImg}}" alt="" width="40px" />
+		<p class="auth-name color-black">{{statusText}}</p>
+	</div>
+	<div class="record-content">
+		<div>
+			<span class="repair-name color-black">{{contact}}</span>
+			<p class="pickupAmount color-phone">{{phone}}</p>
+		</div>
+		<div>{{zoneName}}&nbsp;&nbsp;<span>{{house.building}}</span>号楼<span>{{house.unit}}</span>单元<span>{{house.floor}}</span>楼<span>{{house.room}}</span>室</div>
+		<div style="color: #5c5858;">{{expectTime}}</div>
+	</div>
+
+	<span class="mui-icon mui-icon-forward"></span>
+
+</li>
+{{/dataList}}-->
+{{#dataList}}
+<li>
+	<div class="repar-box">
+		<div class="box-top {{color}}" repairId="{{id}}" info="{{contact}}:{{phone}}:{{status}}:{{house.building}}:{{house.unit}}:{{house.floor}}:{{house.room}}:{{images}}">
+			<img src="{{statusImg}}" alt="" width="30px" height="30px" />
+			<p class="top-name">{{statusText}}</p>
+			<p class="repar-time">{{expectTime}}</p>
+			<span class="mui-icon mui-icon-forward"></span>
+
+		</div>
+		<div class="box-bottom">
+			<img class="bot-img" src="{{avatar}}" onerror="javascript:this.src='images/default_header.png'" alt="" width="45px" height="45px" />
+			<div class="bot-content">
+				<div class="bot-info">
+					<span class="bot-name">{{contact}}</span>
+					<span class="bot-mobile">{{phone}}</span>
+					<img class="bot-call" tel="{{phone}}" src="images/telphone.svg" alt="" width="20px" />
+				</div>
+				<div class="bot-address">{{zoneName}}&nbsp;&nbsp;<span>{{house.building}}</span>号楼<span>{{house.unit}}</span>单元<span>{{house.floor}}</span>楼<span>{{house.room}}</span>室</div>
+			</div>
+
+		</div>
+	</div>
+</li>
+{{/dataList}}

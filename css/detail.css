@@ -1,0 +1,139 @@
+	.praise-user,
+	.praise-comment {
+		padding: 10px 10px;
+		position: relative;
+	}
+	
+	.mui-pull-right {
+		position: relative;
+		top: 9px;
+		right: 10px;
+	}
+	
+	.user-name,
+	.user-date {
+		position: absolute;
+	}
+	
+	.user-name {}
+	
+	.user-date {
+		bottom: 10px;
+		font-size: 12px;
+	}
+	
+	.income-tap {
+		height: 40px;
+		background: white;
+		/*line-height: 50px;*/
+		margin-top: 10px;
+		border-bottom: 1px solid gainsboro;
+	}
+	
+	.income-tap div {
+		display: inline-block;
+		width: 49%;
+		text-align: center;
+		height: 40px;
+		line-height: 40px;
+	}
+	
+	.income-tap div span {
+		display: inline-block;
+		height: 40px;
+		width: 50%;
+		/* margin-top: -5px; */
+		position: relative;
+		font-size: 16px;
+	}
+	/*.income-tap div:last-child{
+	border-left: 1px solid #8f8f94;
+}*/
+	
+	.select {
+		border-bottom: 2px solid #f05141;
+		color: #f05141;
+		font-weight: 600;
+	}
+	
+	.comment-show,
+	.praise-show {
+		background: white;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	
+	.comment-show li,
+	.praise-show li {
+		padding: 10px 10px;
+		padding-bottom: 0px;
+		position: relative;
+		border-bottom: 1px solid gainsboro;
+	}
+	
+	.comment-show .user-speak {
+		position: absolute;
+		bottom: 7px;
+		font-size: 15px;
+	}
+	
+	.comment-show .speak-time {
+		position: absolute;
+		right: 20px;
+		font-size: 12px;
+	}
+	
+	.praise-show .comment-time {
+		position: absolute;
+		top: 10px;
+		font-size: 12px;
+		color: darkgray;
+		right: 15px;
+	}
+	
+	.comment-box {
+		height: 50px;
+		background: lightgray;
+		border-top: 1px solid darkgray;
+		position: fixed;
+		bottom: 0px;
+		width: 100%;
+	}
+	
+	#input-message {
+		width: 80%;
+		height: 40px;
+		margin-top: 5px;
+		margin: 5px 2%;
+		border-radius: 5px !important;
+	}
+	
+	#send-message {
+		width: 14%;
+		position: relative;
+		top: 8px;
+		right: 8px;
+		background: lightgray;
+		border: 0px;
+		font-size: 17px;
+	}
+	
+	.comment-text {
+		width: 85%;
+		word-break: break-word;
+		position: relative;
+		top: -15px;
+		left: 50px;
+		color: black;
+	}
+	
+	@media only screen and (min-width: 100px) and (max-width: 320px) {
+		.comment-text {
+			width: 82%;
+			word-break: break-word;
+			position: relative;
+			top: -20px;
+			left: 50px;
+			color: black;
+		}
+	}

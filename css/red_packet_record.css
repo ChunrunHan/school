@@ -1,0 +1,50 @@
+.red-record{
+	padding: 10px 15px;
+	position: relative;
+}
+.red-record:after{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 15px;
+	height: 1px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+.red-record .record-img{
+	width: 45px;
+	margin-right: 15px;
+	position: relative;
+	top: 1px;
+	
+}
+.red-record .record-content{
+	/*float: right;*/
+	display: inline-block;
+	position: absolute;
+	color: gray;
+	font-size: 13px;
+}
+.red-record .record-content div{
+	height: 20px;
+	line-height: 20px;
+	width: 60vw;
+}
+.red-record .record-arrowright{
+	position: absolute;
+	right: 20px;
+	top:50%;
+	margin-top: -12px;
+}
+.record-content div p{
+	/*width: 100px;*/
+	display: inline-block;
+}
+.content-amount{
+	color: black;
+	font-size: 17px;
+	font-weight: 600;
+	padding-right: 10px;
+}

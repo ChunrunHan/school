@@ -1,0 +1,42 @@
+.car-memo {
+	position: absolute;
+	height: 40px;
+	top: 10px;
+	left: 140px;
+	color: #8f8f94;
+	text-align: center;
+	width: 140px;
+}
+
+@media only screen and (min-width: 100px) and (max-width: 360px) {
+	.tel-list li {
+		background: white;
+		border-bottom: 1px solid lightgray;
+		padding: 10px 5px;
+		position: relative;
+		height: 60px;
+		line-height: 40px;
+	}
+	.tel-btn {
+		position: absolute;
+		top: 50%;
+		margin-top: -17px;
+		left: 5px;
+	}
+	.white-del {
+		position: absolute;
+		right: 9px;
+		top: 13px;
+	}
+	.car-number {
+		margin-left: 35px;
+		font-weight: 600;
+	}
+	.car-memo {
+		position: absolute;
+		height: 40px;
+		top: 10px;
+		left: 111px;
+		color: #8f8f94;
+	}
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/about.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav" id="header">
+			<h1 class="mui-title">联系我们</h1>
+			<a class="icon-back mui-pull-left mui-action-back"></a>
+		</header>
+		<div class="mui-content">
+			<img src="images/logo.jpg" alt="" class="about-logo" />
+			<ul class="mui-table-view" id="about-list">
+				<li class="mui-table-view-cell" id="call"><span class="mui-pull-left icon-serve about-icon color-call"></span><span class="mui-pull-left">服务热线</span><span class="mui-pull-right">13361213969</span></li>
+				<li class="mui-table-view-cell"><span class="mui-pull-left icon-email about-icon color-esc"></span><span class="mui-pull-left">客服邮箱</span><span class="mui-pull-right">service@yezhubao.net</span></li>
+				<li class="mui-table-view-cell"><span class="mui-pull-left icon-public about-icon color-about"></span><span class="mui-pull-left">微信公众号</span><span class="mui-pull-right">小区业主宝</span></li>
+			</ul>
+		</div>
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/about']);
+		</script>
+	</body>
+
+</html>

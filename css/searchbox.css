@@ -1,0 +1,49 @@
+.search-box {
+	position: fixed;
+	height: 45px;
+	width: 100%;
+	background: white;
+	border-bottom: 1px solid lightgray;
+	z-index: 100;
+	font-size: 14px;
+	color: dodgerblue;
+	font-weight: 400;
+	font-weight: 600;
+}
+
+.search-box .mui-icon-forward {
+	font-size: 15px;
+	position: relative;
+	right: -2px;
+	transform: rotate(90deg);
+	color: dodgerblue;
+	font-weight: 900;
+}
+
+.search-box div {
+	position: relative;
+	/*display: inline-block;*/
+	float: left;
+	width: 50vw;
+}
+
+.search-one,
+.search-time,
+.search-all {
+	height: 45px;
+	line-height: 45px;
+}
+
+.search-all {
+	/*padding-left: 10px;*/
+	text-align: center;
+}
+
+.search-one {
+	text-align: center;
+}
+
+.search-time {
+	text-align: right;
+	/*padding-right: 5px;*/
+}

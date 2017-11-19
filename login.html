@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/login.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav door" id="header">
+			<h1 class="mui-title">枣园资讯app</h1>
+		</header>
+
+		<div class="mui-content">
+			<img src="images/logo.jpg" alt="" class="about-logo door" />
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label id="user"><span class="icon-mobile"></span></label>
+					<input id='mobile' data-bind="mobile|mobile|手机号格式不正确" type="tel" class="mui-input-clear" maxlength="11" placeholder="请输入手机号">
+				</div>
+				<div class="mui-input-row">
+					<label id="user"><span class="icon-password"></span></label>
+					<input id="password" maxlength="16" data-bind="password|password|密码格式不正确" type="password" class="mui-input-password" placeholder="请输入密码">
+				</div>
+			</form>
+			<form class="mui-input-group" id="bottom">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell remember-pass" style="padding-left: 20px;">
+						自动登录
+						<div id="autoLogin" class="mui-switch mui-active">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</form>
+
+			<button id='login-btn' class="mui-btn switch-commit">登录</button>
+			<div class="mui-content-padded">
+				<div class="link-area">
+					<a id='forget-password'>忘记密码</a>
+				</div>
+			</div>
+			<div class="mui-content-padded">
+				<div class="mui-text-center">
+					<a id='user-regist' class="color-auto">用户注册</a>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view" id='server'>
+				<li class="mui-table-view-cell">
+					<a style="font-size: 18px; color: black;">
+						切换服务器
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="server-list" href="#sheet1" data-url="https://api.yezhubao.net" data-bucket='yezhubao-data'>
+						<span class="server-check">√</span> 生产服务器
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="server-list" href="#sheet1" data-url="https://dev.yezhubao.net" data-bucket='yzb-data'>
+						开发服务器
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="server-list" href="#sheet1" data-url="https://192.168.31.97:8080" data-bucket='yzb-data'>
+						内部服务器
+					</a>
+				</li>
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#sheet1"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<!--
+        	作者：534123074@qq.com
+        	时间：2017-09-11
+        	描述：
+		<table id="tb" width="100%" border="1" cellspacing="3" cellpadding="3" style="text-align: center; display: ;">
+			<caption style="margin-bottom: 15px">商家端功能权限列表</caption>
+			<tr>
+
+				<th style="width: 30px !important;">功能模块显示</th>
+				<th>super超级管理员</th>
+				<th>region_admin区域管理员</th>
+				<th>zone_admin小区管理员</th>
+				<th>yeweihui小区业委会</th>
+				<th>property_admin小区物业经理</th>
+				<th>property_repair小区物业工程</th>
+				<th>property_service小区物业客服</th>
+				<th>property_car_manager小区车辆管理员</th>
+			</tr>
+
+			<tr>
+				<th>物业公告</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<th>社区动态</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<th>报修</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>0</td>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<th>建议物业</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<th>表扬物业</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<th>投诉物业</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<th>常用电话</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<th>智慧停车</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<th>联系我们</th>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+		</table>-->
+		
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/login']);
+		</script>
+	</body>
+
+</html>

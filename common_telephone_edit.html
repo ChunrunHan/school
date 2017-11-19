@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<style>
+			.btn-box{
+				margin:20px 5%;
+				text-align: center;
+			}
+			.btn-box button{
+				width: 40%;
+			}
+			.btn-box button:first-child{
+				margin-right: 10%;
+			}
+			.tel-box{
+				background: rgba(0,0,0,0.5);
+				height: 100vh;
+				width: 100vw;
+				position: absolute;
+				top: 0;
+				padding-top: 45px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back icon-back mui-pull-left"></a>
+			<h1 class="mui-title seller-name mui-ellipsis">新增电话</h1>
+			<!--<a class="icon-add mui-pull-right"></a>-->
+		</header>
+
+		<div class="mui-content">
+			<div class="tel-add">
+				<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>
+						电话名称
+					</label>
+					<input style="padding-right: 20px !important;" type="text" data-bind="name" placeholder="请输入电话名称" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						电话号码
+					</label>
+					<input style="padding-right: 20px !important;" type="tel" maxlength="11" size="11"  data-bind="number" placeholder="请输入电话号码" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						优先级
+					</label>
+					<span class="mui-icon mui-icon-forward"></span>
+					<input id="priority-select" style="padding-right: 40px !important;" type="text" readonly="" placeholder="请选择优先级" />
+				</div>
+				</form>
+				<!--<div class="btn-box">
+					<button id="tel-save" type="button" class="mui-btn mui-btn-primary">确认</button>
+					<button id="tel-cancel" type="button" class="mui-btn mui-btn-warning">取消</button>
+				</div>-->
+				<button type="button" class="mui-btn switch-commit number-save mui-action-back" style="top:200px">保存电话</button>
+			</div>
+		</div>
+		
+		<div id="sheet2" class="mui-popover mui-popover-bottom mui-popover-action ">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view" id='server'>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet2" priority='5'>
+						高
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet2" priority='4'>
+						较高
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet2" priority='3'>
+						中
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet2" priority='2'>
+						较低
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet2" priority='1'>
+						低
+					</a>
+				</li>
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#sheet2"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/common_telephone_edit']);
+		</script>
+	</body>
+
+</html>

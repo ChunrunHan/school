@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/temporary_vehicle.css" />
+		<style type="text/css">
+			.mui-input-row input {
+    			padding-right: 20px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back icon-back mui-pull-left"></a>
+			<h1 class="mui-title mui-ellipsis" id="carNum"></h1>
+		</header>
+
+		<div class="mui-content">
+			<div class="goods-title">基本信息</div>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>
+						业主
+					</label>
+					<input id="owner" style="padding-right: 20px;" readonly="" value="111" type="text" data-bind="owner" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						联系电话
+					</label>
+					<img class="call-owner" tel="" src="images/telphone.svg" alt="" />
+					<input style="padding-right: 50px !important;" readonly="" value="111" type="tel" data-bind="mobile"/>
+				</div>
+				<div class="mui-input-row">
+					<label>
+						车辆类型
+					</label>
+					<input style="padding-right: 20px;" readonly="" value="111" type="text" data-bind="" />
+				</div>
+				<div class="mui-input-row">
+					<label>
+						进入时间
+					</label>
+					<input style="padding-right: 20px;" readonly="" value="111" type="text" data-bind="" />
+				</div>
+			</form>
+			
+
+		</div>
+		
+	
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/vehicle_reverse_detail']);
+		</script>
+	</body>
+
+</html>

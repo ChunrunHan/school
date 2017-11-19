@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/repair.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<div class="mui-scroll-wrapper mui-content income-detail" id="pullrefresh">
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-table-view-chevron userauth-list repair-all">
+				
+					
+					<li>
+						<p>2017-9-2 12:00:00</p>
+						<div class="repar-box">
+							<div class="box-top auto-color">
+								<img src="images/baoxiu.svg" alt="" width="30px" />
+								<p class="top-name">已报修</p>
+								<span class="mui-icon mui-icon-forward"></span>
+
+							</div>
+							<div class="box-bottom">
+								<img class="bot-img" src="images/default_header.png" alt="" width="45px"/>
+								<div class="bot-content">
+									<div class="bot-info">
+										<span class="bot-name">张三</span>
+										<span class="bot-mobile">17863253292</span>
+										<img class="bot-call" src="images/telphone.svg" alt="" width="20px" />
+									</div>
+									<div class="bot-address">香山美墅&nbsp;&nbsp;<span>1</span>号楼<span>1</span>单元<span>201</span>室</div>
+								</div>
+								
+							</div>
+						</div>
+					</li>
+					<li>
+						<p>2017-9-2 12:00:00</p>
+						<div class="repar-box">
+							<div class="box-top repair-color">
+								<img src="images/jiejue.svg" alt="" width="30px"/>
+								<p class="top-name">待解决</p>
+								<span class="mui-icon mui-icon-forward"></span>
+
+							</div>
+							<div class="box-bottom">
+								<img class="bot-img" src="images/default_header.png" alt="" width="45px"/>
+								<div class="bot-content">
+									<div class="bot-info">
+										<span class="bot-name">张三</span>
+										<span class="bot-mobile">17863253292</span>
+										<img class="bot-call" src="images/telphone.svg" alt="" width="20px" />
+									</div>
+									<div class="bot-address">香山美墅&nbsp;&nbsp;<span>1</span>号楼<span>1</span>单元<span>201</span>室</div>
+								</div>
+								
+							</div>
+						</div>
+					</li>
+					
+					<li>
+						<p>2017-9-2 12:00:00</p>
+						<div class="repar-box">
+							<div class="box-top success-color">
+								<img src="images/true.svg" alt="" width="30px"/>
+								<p class="top-name">已通过</p>
+								<span class="mui-icon mui-icon-forward"></span>
+
+							</div>
+							<div class="box-bottom">
+								<img class="bot-img" src="images/default_header.png" alt="" width="45px"/>
+								<div class="bot-content">
+									<div class="bot-info">
+										<span class="bot-name">张三</span>
+										<span class="bot-mobile">17863253292</span>
+										<img class="bot-call" src="images/telphone.svg" alt="" width="20px" />
+									</div>
+									<div class="bot-address">香山美墅&nbsp;&nbsp;<span>1</span>号楼<span>1</span>单元<span>201</span>室</div>
+								</div>
+								
+							</div>
+						</div>
+					</li>
+					
+					<li>
+						<p>2017-9-2 12:00:00</p>
+						<div class="repar-box">
+							<div class="box-top reject-color">
+								<img src="images/jjue.svg" alt="" width="30px"/>
+								<p class="top-name">已拒绝</p>
+								<span class="mui-icon mui-icon-forward"></span>
+
+							</div>
+							<div class="box-bottom">
+								<img class="bot-img" src="images/default_header.png" alt="" width="45px"/>
+								<div class="bot-content">
+									<div class="bot-info">
+										<span class="bot-name">张三</span>
+										<span class="bot-mobile">17863253292</span>
+										<img class="bot-call" src="images/telphone.svg" alt="" width="20px" />
+									</div>
+									<div class="bot-address">香山美墅&nbsp;&nbsp;<span>1</span>号楼<span>1</span>单元<span>201</span>室</div>
+								</div>
+								
+							</div>
+						</div>
+					</li>
+					
+					
+					
+					
+					
+
+				</ul>
+			</div>
+			<div class="search-result">
+				<img class="" src="images/smile.svg" alt="" width="40px" height="40px" />
+				<p>当前没有报修信息</p>
+			</div>
+		</div>
+		
+		<!--报修类型-->
+		<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view" id='server'>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='0'>
+						全部状态
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='1'>
+						已报修
+					</a>
+				</li>
+				<!--<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='2'>
+						已接单
+					</a>
+				</li>-->
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='4'>
+						待解决
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='5'>
+						已解决
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="priority-list" href="#sheet1" priority='6'>
+						已拒绝
+					</a>
+				</li>
+
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#sheet1"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<script>
+			require(['app/repair_sub']);
+		</script>
+	</body>
+
+</html>

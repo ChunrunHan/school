@@ -1,0 +1,113 @@
+.zone-area {
+				background: white;
+			}
+			
+			.inout-list {
+				position: relative;
+				padding: 10px 15px;
+				height: 60px;
+				border-bottom: 1px solid lightgray;
+			}
+			
+			.inout-build,
+			.inout-position {
+				position: absolute;
+				right: 15px;
+			}
+			
+			.inout-img {
+			    position: absolute;
+			    top: 14px;
+			}
+			
+			.inout-car,
+			.inout-time {
+				margin-left: 40px;
+			}
+			
+			.inout-car {
+				font-weight: 600;
+				color: black;
+				font-size: 15px;
+			}
+			
+			.inout-build {
+				top: 10px;
+			}
+			
+			.inout-position {
+				bottom: 7px;
+			}
+			
+			.mui-scroll-wrapper {
+				position: absolute;
+				z-index: 2;
+				top: 125px;
+				bottom: 0;
+				left: 0;
+				overflow: hidden;
+				width: 100%;
+			}
+			
+			.mui-bar-nav~.mui-content {
+				padding-top: 0px;
+				margin-top: 10px;
+			}
+			
+			.server-box,.search-btn{
+				position: absolute;
+			}
+			.server-box{
+				left: 10px;
+				top:10px;
+				width: 80%;
+				height: 40px;
+				background: #e5e5e5;
+				border-radius: 10px;
+			}
+			.search-btn{
+				height: 40px;
+				line-height: 40px;
+				top: 10px;
+				text-align: center;
+				right: 10px;
+				padding: 0px 5px;
+			}
+			#carnum,#selectCity,#cityname,#selectMode,#citymode{
+				position: absolute;
+				background: transparent;
+			}
+			#carnum{
+				width: 90px;
+			    left: 85px;
+			    text-align: right;
+			    padding-left: 0px;
+			    line-height: 40px;
+			}
+			#selectCity{
+				width: 60px;
+				text-align: center;
+				left: 25px;
+				padding-right: 20px;
+				line-height: 40px;
+				/*border-right: 1px solid white !important;*/
+				/*border-radius: 0px !important;*/
+			}
+			#cityname{
+				top:8px;
+				left: 60px;
+				transform: rotate(90deg);
+			}
+			#citymode{
+				/*color: #dcdcdc;*/
+				top:8px;
+				right: 5px;
+				transform: rotate(90deg);
+			}
+			#selectMode{
+				width: 110px;
+				right: 6px;
+				text-align: center;
+				line-height: 40px;
+				z-index: 10;
+			}

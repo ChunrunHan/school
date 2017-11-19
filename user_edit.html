@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/goods_list_add.css" rel="stylesheet" />
+		<link href="css/seller_edit.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.picker.min.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="icon-back mui-pull-left mui-action-back"></a>
+			<h1 class="mui-title">用户信息</h1>
+			<a class="mui-pull-right mui-action-back goods-save font-16px">保存</a>
+		</header>
+
+		<div class="mui-content">
+			<div class="mui-scroll">
+				<div class="box">
+					<img class="img-logo" src="images/default_header.png" alt="" />
+				</div>
+				
+				<div class="goods-title">基本信息</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>
+							用户昵称
+						</label>
+						<input id="nickname" class='mui-ellipsis' maxlength="10" size="10" type="text"  placeholder="最多10个字" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							真实姓名
+						</label>
+						<input id='realname' class='mui-ellipsis' readonly="" maxlength="10" size="10" type="text" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							联系电话
+						</label>
+						<input id="phone" maxlength="11" type="tel" readonly="" />	
+					</div>
+					
+					
+				</form>
+				<div class="goods-title">业务信息</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>
+							所在地区
+						</label>
+						<input id="area" class="mui-ellipsis" readonly="" type="text" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							所属小区
+						</label>
+						<input id="zone" class="mui-ellipsis" readonly="" type="text"/>
+					</div>
+					<!--<div class="mui-input-row">
+						<label> 
+							职位信息
+						</label>
+						<input class='position' readonly="" type="text" placeholder="" />
+					</div>-->
+				</form>
+				
+				
+				<!--<div class="goods-title">提现账号</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-pay-zfb icon-title"></span> 
+							支付宝
+						</label>
+						<input  class="defcolor" readonly="readonly" type="text" data-bind="alipayAccount" placeholder="支付宝ID" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-cash-card icon-title"></span> 
+							银行
+						</label>
+						<input maxlength="20" readonly="" type="text" data-bind="bankAccount" placeholder="银行卡号" />
+					</div>
+				</form>-->
+				
+				<!--<div class="goods-title">业务信息</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-info-send icon-title"></span> 
+							配送费
+						</label>
+						<input id="inputMoney" type="text" data-bind="deliveryPrice" placeholder="配送费" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-info-qisong icon-title"></span> 
+							几元起送
+						</label>
+						<input id="inputMoney" type="text" data-bind="minPrice" placeholder="满多少元起送 " />
+					</div>
+					<div class="mui-input-row">
+						<label style="width: 50%;">
+							<span class="icon-info-qisong icon-title"></span> 
+							几元免配送费
+						</label>
+						<input id="inputMoney" type="text" data-bind="freeDeliveryAmount" placeholder="满多少元免运费 " />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-info-start icon-title"></span> 
+							营业时间
+						</label>
+						<div id="time-start">
+							<input id="start" readonly="readonly"  maxlength="10" size="10 " type="text" placeholder="营业时间"/>
+						</div>
+					</div>
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-info-closedoor icon-title"></span> 
+							打烊时间
+						</label>
+						<div id="time-end">
+							<input id="end" readonly="readonly" maxlength="10" size="10 " type="text" placeholder="打烊时间" />
+						</div>
+					</div>
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-info-order icon-title"></span>
+							总订单数
+						</label>
+						<input class="defcolor" readonly="readonly" type="number" data-bind="totalOrder" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-info-grade icon-title"></span>
+							总评分
+						</label>
+						<input class="defcolor" readonly="readonly" type="number" data-bind="totalScore" />
+					</div>
+				</form>
+				
+			  	<div class="goods-title" style="display: none;">地理位置</div>
+				<form class="mui-input-group" style="display: none;">
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-info-jingdu icon-title"></span> 
+							经度
+						</label>
+						<input type="number" readonly="" data-bind="longitude" placeholder="0" />
+					</div>
+					<div class="mui-input-row">
+						<label>
+							<span class="icon-info-weidu icon-title"></span> 
+							纬度
+						</label>
+						<input type="number" readonly="" data-bind="latitude" placeholder="0" />
+					</div>
+				</form>-->
+				
+				<!--<div class="goods-title">个人介绍</div>
+				<div style="position: relative;">	
+				<textarea id="description" rows="5" maxlength="200" placeholder="公告（用户可见）"></textarea>
+				<p class="count-box"><span id="count-text">0</span><span>/200</span></p>
+				</div>-->
+				
+				
+				<!--用于存放获取的位置数值-->
+				<input type="hidden" id="province"/>
+				<input type="hidden" id="city"/>
+				<input type="hidden" id="district"/>
+				<input type="hidden" id="serviceStart"  data-bind="serviceStart" />
+				<input type="hidden" id="serviceEnd"  data-bind="serviceEnd" />
+			
+			</div>
+		</div>
+		
+	
+		
+
+		<script src="js/common.js"></script>
+		<script src="js/lib/require.js"></script>
+		<!--<script src="js/lib/city.data.js"></script>-->
+		<script>
+			require(['app/user_edit']);
+		</script>
+		<script src="js/lib/mui.min.js"></script>
+		<script src="js/lib/city.data.js"></script>
+		<script src="js/lib/mui.picker.js"></script>
+		<script src="js/lib/mui.picker.min.js"></script>
+		<script src="js/lib/mui.poppicker.js"></script>
+	</body>
+
+</html>

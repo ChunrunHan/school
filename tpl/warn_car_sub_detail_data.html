@@ -1,0 +1,20 @@
+{{#dataList}}
+<li id="{{id}}">
+	<p class="box-time">{{recordTime}}</p>
+	<div class="repar-box">
+		<div class="box-top reject-color">
+			<img src="images/jjue.svg" alt="" width="30px" height="30px" class="delete" info="{{id}}" />
+			<p class="top-name">{{carType}}</p>
+			<!--<p class="top-left">{{type}}</p>-->
+		</div>
+		<div class="box-bottom">
+			<img class="bot-img" src="images/warncar.svg" alt="" width="45px" />
+			<div class="bot-content">
+				<p class="bot-title">{{parkingName}}</p>
+				<p>{{reason}}</p>
+			</div>
+
+		</div>
+	</div>
+</li>
+{{/dataList}}

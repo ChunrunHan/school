@@ -1,0 +1,46 @@
+/*图片上传*/
+
+.del-img {
+	color: red;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-size: 25px;
+}
+
+.del-img:hover {
+	color: red;
+}
+
+.img-box {
+	position: relative;
+	display: inline-block;
+	/*margin: 0px 1px;*/
+}
+
+.img-add {
+	width: 50px;
+	/*height: 102px;*/
+	/*background: url(../images/iconfont-tianjia.png);
+	background-size: 100% 100%;*/
+	/*margin-right: 1px;*/
+}
+
+.img-all {
+	width: 100%;
+	height: auto;
+	padding: 5px 10px;
+	text-align: left;
+	background: white;
+}
+
+.img-src {
+	width: 100%;
+	border-radius: 3px;
+}
+
+.img-all div {
+	display: inline-block;
+	width: 30%;
+	margin:0px 1%;
+}

@@ -1,0 +1,90 @@
+.mui-table-view{
+	background: transparent;
+}
+/*头部时间部分*/
+.anno-li .anno-time{
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: white;
+	background: rgba(0,0,0,0.3);
+	text-align: center;
+}
+.anno-top{
+	padding-top:15px;
+	text-align: center;
+}
+
+/*公告整体内容*/
+.anno-content{
+	border-radius: 10px;
+	background: white;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.content-title{
+	position: relative;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+}
+.content-title p{
+	display: inline-block;
+}
+.content-title img{
+	display: inline-block;
+}
+.anno-del span{
+	position: relative;
+	top:-4px
+}
+.title-left {
+	
+}
+.title-left img{
+	position: relative;
+	top:5px;
+	left: 5px;
+}
+.content-name{
+	position: relative;
+	top: -24px;
+	left: 40px;
+	width: 260px;
+}
+.title-right{
+	position: absolute;
+	right: 5px;
+	height: 20px;
+	top:5px;
+	padding-left: 5px;
+	border-left: 1px solid lightgray;
+}
+.title-right p{
+	height: 20px;
+}
+.content-text{
+	padding:0px 10px;
+}
+.anno-date{
+	position: absolute;
+	bottom: 0px;
+	left:15px;
+}
+.content-img{
+	padding: 0px 10px;	
+}
+.content-img img{
+	margin:5px 1%;
+}
+
+
+@media only screen and (min-width: 100px) and (max-width: 320px) {
+	.content-name{
+	position: relative;
+	top: -24px;
+	left: 40px;
+	width: 210px;
+}
+}

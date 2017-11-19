@@ -1,0 +1,18 @@
+.about-icon{
+	padding-right: 10px;	
+	font-size: 24px;
+}
+.mui-table-view-cell{
+	line-height: 24px;
+}    
+.mui-pull-right{
+	font-size: 16px;
+}
+
+.about-logo {
+	width: 100px;
+	height: 100px;
+	display: block;
+	border-radius: 20px;
+	margin: 30px auto;
+}

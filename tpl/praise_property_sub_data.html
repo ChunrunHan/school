@@ -1,0 +1,32 @@
+{{#dataList}}
+<li>
+	<p>
+		<img class="user-logo" src="{{avatar}}" width="40px" height="40px" onerror="javascript:this.src='images/default_header.png'"/>
+		<span class="user-name color-black">{{nickName}}</span>
+	</p>
+	<p class="user-comment">
+		{{text}}
+	</p>
+	
+	<div class="content-img">
+		{{#images}}
+		<img class="imgs" src="{{.}}" alt="" width="30%" height="auto" onerror="javascript:this.src='images/default_goods.png'">
+		{{/images}}
+	</div>
+
+	<div class="comment-bottom mui-clearfix">
+		<span class="mui-pull-left">{{publishTime}}</span>
+		<div class="mui-pull-right">
+			<p>
+				<img class="comment-detail" src="images/comment.svg" alt="" praiseId="1" />
+				<span class="content-num">{{totalComments}}</span>
+			</p>
+			<p>
+				<img class="praise-hand" src="images/praise.svg" alt="" praise='no' totalLikes="{{totalLikes}}" />
+				<span class="praise-num">{{totalLikes}}</span>
+			</p>
+		</div>
+
+	</div>
+</li>
+{{/dataList}}

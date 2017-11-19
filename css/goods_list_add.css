@@ -1,0 +1,162 @@
+.mui-input-row label {
+	width: 40%;
+	color: gray;
+	padding-left: 10px;
+	position: relative;
+	text-align: left;
+}
+
+.mui-input-row input {
+	width: 60% !important;
+	position: absolute;
+	right: 0px;
+	text-align: right !important;
+	color: #676666;
+}
+.mui-input-row input::-ms-input-placeholder{text-align: right !important;}
+.mui-input-row input::-webkit-input-placeholder{text-align: right !important;}
+.input-value::-webkit-input-placeholder{
+	text-align: right !important;
+}
+input::-moz-input-placeholder{ /*Mozilla Firefox*/
+	text-align: right !important;
+}
+input::-ms-input-placeholder{ /*Internet Explorer*/ 
+	text-align: right !important;
+}
+
+
+/*样式布局*/
+.category-right{
+	display: inline-block;
+	/*height: 40px;
+	line-height: 40px;*/
+	height: 45px;
+	line-height: 45px;
+	float: right;
+	margin-right: 20px;
+	color: #676666;
+}
+.input-lable {
+	width: 40%;
+}
+
+
+/*图片样式部分*/
+
+.del-img {
+	color: red;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-size: 25px;
+}
+
+.del-img:hover {
+	color: red;
+}
+
+.img-box {
+	position: relative;
+	display: inline-block;
+	/*margin: 0px 1px;*/
+}
+
+.img-add {
+	width: 50px;
+	/*height: 102px;*/
+	/*background: url(../images/iconfont-tianjia.png);
+	background-size: 100% 100%;*/
+	/*margin-right: 1px;*/
+}
+
+.img-all {
+	width: 100%;
+	height: auto;
+	padding: 5px 10px;
+	text-align: left;
+	background: white;
+}
+
+.img-src {
+	width: 100%;
+	border-radius: 3px;
+}
+
+.img-all div {
+	display: inline-block;
+	width: 30%;
+	margin:0px 1.6%;
+}
+
+#description {
+	border: 0px;
+	margin-bottom: 0px;
+	color: #676666;
+}
+
+textarea {
+	border-left: 0px;
+	border-right: 0px;
+	height: 127px;
+}
+
+#memo {
+	border: 0px;
+	margin-bottom: 0px;
+	color: #676666;
+}
+
+
+/*标题*/
+
+.goods-title {
+	font-size: 14px;
+	line-height: 25px;
+	padding-left: 10px;
+	height: 25px;
+	color: #BBBBBB;
+	margin-top: 10px;
+}
+.icon-title{
+	position: relative;
+	top:2px;
+}
+.mui-input-group .mui-input-row:after{
+	left:10px !important;
+}
+
+.count-box{
+	position: absolute;
+	right: 10px;
+	top:111px;
+}
+
+/*描述图片*/
+.des-imgbox{
+	background: white;
+}
+.des-add{
+	width: 100%;
+	height: 130px;
+	background: white;
+	text-align: center;
+	line-height: 130px;
+	/*border: 1px solid #c4c4c4;
+	border-radius: 10px;*/
+	margin-bottom: 10px;
+}
+.des-addimg{
+	vertical-align: middle;
+}
+.des-showimg{
+	position: relative;
+}
+.del-desimg{
+	position: absolute;
+	color: red;
+	font-size: 80px;
+	top: 0px;
+	right: 0px;
+	
+}

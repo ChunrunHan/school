@@ -1,0 +1,168 @@
+/*.userauth-list li{
+	height: auto;
+	position: relative;
+	border-bottom:5px solid #efeff4;
+}
+
+.mui-button-row{
+	text-align: right;
+	padding-right: 20px;
+	background: white;
+	padding-bottom: 5px;
+	border-top:1px solid #efeff4;
+}
+
+.margin-r20{
+	margin-right: 20px;
+}
+.pass-img{
+	position: absolute;
+	z-index: 100;
+	width: 60px;
+	top: 10px;
+	right: 10px;
+}
+.mui-input-group .mui-input-row:after{
+	right: 15px;
+}
+.mui-input-row label{
+	color: gray;
+}
+.mui-input-row label span{
+	padding-right: 10px;
+	position: relative;
+	top: 2px;
+}
+.mui-btn{
+	padding: 6px 18px !important;
+}
+
+.mui-media-body{
+	width:70%;
+	height: 80px;
+	padding-top: 15px;
+	padding-left: 5px;
+}	
+.mui-media-body p{
+	height: 20px;
+}
+
+.auth-name,.auth-phone{
+	padding-left: 5px;
+	font-size: 17px;
+}
+#auth-zone{
+	width: 30%;
+	line-height: 20px;
+	position: relative;
+	text-align: center;
+	top: 21px;
+
+	
+}
+.auth-time{
+	padding-left: 10px;
+	font-size: 14px;
+	position: absolute;
+	right: 3%;
+}
+
+.mui-media-body p:nth-child(1){
+	margin-bottom: 10px;
+} */
+
+.record-img {
+	height: 55px;
+	display: inline-block;
+	text-align: center;
+}
+.red-record{
+	padding: 0px 15px;
+	padding-top: 8px;
+	/* padding-bottom: 0px; */
+	position: relative;
+}
+
+.auth-name {
+	position: relative;
+	top: -7px;
+	width: 45px;
+	height: 20px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.auth-btn{
+	position: absolute;
+	right: 15px;
+	top:7px;
+}
+/*.auth-btn div{
+	font-size: 14px;
+	display: block;
+	border: 1px solid #d8d2d2;
+	border-radius: 5px;
+	width: 70px;
+	height: 27px;
+	text-align: center;
+	line-height: 27px;
+	color: white;
+}
+
+.auth-btn div:first-child{
+	background: #2fabf1;
+	margin-bottom: 4px;
+}
+.auth-btn div:last-child{
+	background: #f34444;
+}*/
+button{
+	position: absolute;
+	padding: 3px 12px;
+	color: white;
+}
+#auth-pass{
+	right: 15px;
+	top: 8px;
+	background: #2fabf1;
+}
+#auth-reject{
+	right: 15px;
+	bottom: 8px;
+	background: #f34444;
+}
+.red-record .record-content div{
+	height: 20px;
+	line-height: 20px;
+	width: 55vw;
+}
+
+@media (min-width: 100px) and (max-width: 320px) {
+	.red-record{
+		padding: 0px 7px;
+		padding-top: 8px;
+		/* padding-bottom: 0px; */
+		position: relative;
+	}
+	.red-record .record-img{
+		width: 45px;
+		margin-right: 10px;
+		position: relative;
+		top: 1px;
+	}
+	.auth-btn div{
+		display: block;
+		border: 1px solid #d8d2d2;
+		border-radius: 5px;
+		width: 60px;
+		height: 27px;
+		text-align: center;
+		line-height: 27px;
+	}
+}
+.pass-img{
+	position: absolute;
+	width: 65px;
+	top: 5px;
+	right: 10px;
+}

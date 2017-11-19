@@ -1,0 +1,111 @@
+.mui-icon-forward {
+	/*position: absolute;
+	right: -6px;
+	top: 3px;
+	color: #e4e3e6;*/
+	position: absolute;
+    right: 5px;
+    top: 50%;
+    color: #e4e3e6;
+    margin-top: -12px;
+}
+
+.detail-money{
+	right: 35px;
+}
+
+.income-title{
+	margin-top: 10px;
+	background: white;
+	color: white;
+	height: 80px;
+	text-align: center;
+	position: relative;
+}
+
+.title-info{
+	width: 100%;
+	position: relative;
+}
+.income-ramain{
+	position: absolute;
+	left:46%;
+	height: 40px;
+	top:23px;
+}
+.income-ramain p{
+	height: 20px;
+	line-height: 20px;
+}
+.income-ramain p:last-child{
+	font-size: 17px;
+	color: black;
+}
+.title-btn{
+	position: absolute;
+	right: 20px;
+	height: 50px;
+	top:20px;
+}
+.title-btn p{
+	font-size: 16px;
+	color: #f05141;
+	height: 20px;
+	line-height: 20px;
+	width: 60px;
+}
+.title-btn p:nth-child(1){
+	margin-bottom: 10px;
+}
+.title-btn span{
+	position: relative;
+	top: 1px;
+	padding-right: 5px;
+}
+
+
+
+
+.icon-index-wallet{
+	font-size: 40px;
+	right:54%;
+	top:25px;
+	position: absolute;
+}
+
+.income-tap{
+	height: 40px;
+	background: white;
+	/*line-height: 50px;*/
+	margin-top: 10px;
+	border-bottom: 1px solid gainsboro;
+}
+.income-tap div{
+	display: inline-block;
+	width: 49%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+/*.income-tap div span{
+	display: inline-block;
+	height: 35px;
+	width: 30%;
+}*/
+.income-tap div span{
+	display: inline-block;
+	height: 40px;
+	width: 50%;
+	/* margin-top: -5px; */
+	position: relative;
+	font-size: 16px;
+}
+/*.income-tap div:last-child{
+	border-left: 1px solid #8f8f94;
+}*/
+
+.select{
+	border-bottom: 2px solid #f05141;
+	color: #f05141;
+	font-weight: 600;
+}

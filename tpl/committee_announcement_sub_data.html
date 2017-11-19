@@ -1,0 +1,32 @@
+{{#dataList}}
+<li class="anno-li" id="{{id}}">
+	<div class="anno-top">
+		<p class="anno-time"><span>{{week}}</span> <span>{{time}}</span></p>
+	</div>
+	<div class="anno-content">
+		<div class="content-title">
+			<div class="title-left">
+				<img src="images/horn.svg" alt="" width="25px" height="25px" />
+			</div>
+			<p class="content-name color-black">{{title}}</p>
+			<div class="title-right del-anno" annoId="{{id}}:{{delimg}}">
+				<p class="anno-del">
+					<img class="" src="images/delete.svg" alt="" width="20px" height="20px" />
+				</p>
+			</div>
+			<p class="anno-date">
+				{{publishTime}}
+			</p>
+		</div>
+		<p class="content-text color-black">{{text}}</p>
+		
+		<div class="content-img">
+			{{#images}}
+			<img class="{{show}}" src="{{.}}" alt="" width="30%" height="auto" onerror="javascript:this.src='images/default_goods.png'">
+			{{/images}}
+		</div>
+		
+		
+	</div>
+</li>
+{{/dataList}}

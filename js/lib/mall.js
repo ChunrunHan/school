@@ -258,8 +258,9 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 				var ossKeyId = sts.accessKeyId;
 				var signature = sts.signature;
 				var policy = sts.policy;
-				var dir = sts.dir;
-				var host = sts.host;
+//				var dir = ;
+//				var host = sts.host;
+				var host = 'http://zaoyuan.oss-cn-qingdao.aliyuncs.com';
 				
 				if (ossKeyId === undefined || signature === undefined) {
 					defer.reject(ERROR.INVALID_PARAMS);
@@ -274,7 +275,8 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 					return;
 				}
 				var filename = uuid().replace(/-/,'') + suffix;
-				var keyname = dir + filename;
+//				var keyname = dir + filename;
+				var keyname = filename;
 				
 				plus.nativeUI.showWaiting('上传中');
 				var task = plus.uploader.createUpload(host, {
@@ -313,22 +315,23 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 		stsUpdate: function(forceUpdate) {
 			var defer = Q.defer();
 			
-			var mobileP = plus.storage.getItem('mobileP');
-			var cache = plus.storage.getItem(mobileP);
+//			var mobileP = plus.storage.getItem('mobileP');
+//			var cache = plus.storage.getItem(mobileP);
 			
-			if (!this.isNullOrUndefined(cache)) {
-				cache = JSON.parse(cache);
-				var storedExpire = cache.sts.expiration;
-				
-				var nowTime = Date.parse(new Date());
-				if (forceUpdate !== true && storedExpire > nowTime) {
-					//console.log('not expired sts');
-					defer.resolve(cache.sts);
-					return defer.promise;
-				}
-			}
-			urlBaseP = plus.storage.getItem('urlBaseP');
-			var url = urlBaseP + '/sign';
+//			if (!this.isNullOrUndefined(cache)) {
+//				cache = JSON.parse(cache);
+//				var storedExpire = cache.sts.expiration;
+//				
+//				var nowTime = Date.parse(new Date());
+//				if (forceUpdate !== true && storedExpire > nowTime) {
+//					//console.log('not expired sts');
+//					defer.resolve(cache.sts);
+//					return defer.promise;
+//				}
+//			}
+//			urlBaseP = plus.storage.getItem('urlBaseP');
+//			var url = urlBaseP + '/sign';
+			var url = urlBase + '/school/sts';
 			console.log(url)
 			this.get(url).then(function(sts) {
 				if (sts.errCode !== 0) defer.reject(sts.errorCode);
@@ -336,7 +339,7 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
         
 	            var data = new Object();
 	            data.sts = sts.data;
-	            plus.storage.setItem(mobileP, JSON.stringify(data));
+//	            plus.storage.setItem(mobileP, JSON.stringify(data));
 	            defer.resolve(data.sts);
 	            
 			}).fail(function(status) {

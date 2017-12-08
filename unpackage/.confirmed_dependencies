@@ -117,13 +117,15 @@
   "owner_car_parking_add.html": {
     "refer": [
       "select_place.html"
-    ]
+    ],
+    "resources": []
   },
   "owner_car.html": {
     "refer": [
       "owner_car_parking_add.html",
       "owner_car_detail.html"
-    ]
+    ],
+    "resources": []
   },
   "expired_parking.html": {
     "resources": [
@@ -136,7 +138,8 @@
   "warn_car_sub.html": {
     "refer": [
       "warn_car_sub_detail.html"
-    ]
+    ],
+    "resources": []
   },
   "warn_car.html": {
     "resources": [
@@ -150,7 +153,8 @@
     "refer": [
       "owner_car_add_edit.html",
       "select_parking.html"
-    ]
+    ],
+    "resources": []
   },
   "temporary_vehicle_add_car.html": {
     "resources": [
@@ -158,6 +162,18 @@
     ],
     "refer": [
       "temporary_vehicle_add_car_sub.html"
+    ]
+  },
+  "login.html": {
+    "refer": [
+      "forget_password.html",
+      "user_regist.html"
+    ],
+    "resources": []
+  },
+  "user_regist.html": {
+    "refer": [
+      "clip_img.html"
     ]
   }
 }

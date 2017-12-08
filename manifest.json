@@ -1,7 +1,7 @@
 ﻿{
     "@platforms": ["android", "iPhone", "iPad"],
-    "id": "H5DBB446C",/*应用的标识，创建应用时自动生成，勿手动修改*/
-    "name": "school src",/*应用名称，程序桌面图标名称*/
+    "id": "H5285EA08",/*应用的标识，创建应用时自动生成，勿手动修改*/
+    "name": "枣园资讯app",/*应用名称，程序桌面图标名称*/
     "version": {
         "name": "1.0",/*应用版本名称*/
         "code": ""
@@ -10,7 +10,7 @@
     "icons": {
         "72": "icon.png"
     },
-    "launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "launch_path": "login.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
     "developer": {
         "name": "",/*开发者名称*/
         "email": "",/*开发者邮箱地址*/
@@ -363,6 +363,21 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"login.html": {
+				"resources": [],
+				"refer": [
+					"forget_password.html",
+					"user_regist.html"
+				],
+				"priority": 0
+			},
+			"user_regist.html": {
+				"resources": [],
+				"refer": [
+					"clip_img.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {
@@ -376,7 +391,6 @@
 				"images/wuyeapp.png",
 				"images/o-jianzu.svg",
 				"js/lib/mall.js",
-				"forget_password.html",
 				"images/default_goods.png",
 				"images/logo.jpg",
 				"images/o-jichu.svg",
@@ -522,7 +536,6 @@
 				"images/green-car.svg",
 				"tpl/inout_record_data.html",
 				"images/redcar.svg",
-				"login.html",
 				"fonts/icomoon.ttf",
 				"js/app/common_telephone_add.js",
 				"tpl/black_record_data.html",
@@ -659,7 +672,6 @@
 				"js/app/finance_manage.js",
 				"tpl/common_telephone_sub_data.html",
 				"css/income_expenditure.css",
-				"clip_img.html",
 				"tpl/temporary_vehicle_sub_data.html",
 				"js/app/property_announcement.js",
 				"tpl/critica_property_sub_data.html",

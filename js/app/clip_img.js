@@ -249,6 +249,9 @@
         case 'user_edit.html':
           doit = 'userEditClip';
           break;
+         case 'user_regist.html':
+          doit = 'userRegistClip';
+          break;
 
       }
       var view = plus.webview.getWebviewById(id);

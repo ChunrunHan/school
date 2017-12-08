@@ -31,101 +31,96 @@
 				overflow: hidden;
 				overflow-y: scroll;
 			}
-			
+			.powen {
+			    position: absolute;
+			    bottom: -100px;
+			    left: 0px;
+			}
+			.img-icon{
+				width: 40px;
+				height: 40px;
+			}
 		</style>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav" id="header">
-			<h1 class="mui-title zones-name mui-ellipsis">香山美墅</h1>
+			<h1 class="mui-title zones-name mui-ellipsis">枣园资讯</h1>
 			<a class="icon-sz mui-pull-right"></a>
 		</header>
 		
 		<div class="mui-content">
 				<!--数据显示-->
-				<div class="nine-top">
+				<div class="nine-top" style="position: relative;">
 					<div class="top-box">
 						<img src="images/logo.jpg" alt=""  class="top-logo"/>
-						<p class="top-people"><span class="top-username">用户名</span></p>
-						<p class="top-role"><span class="top-userrole">用户昵称</span></p>
+						<p class="top-people"><span class="top-username">Rain</span></p>
+						<p class="top-role"><span class="top-userrole">枣人你好啊</span></p>
 					</div>
+					
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="200" class="powen">
+					    <g fill="rgba(255,255,255,0.1)">
+					        <path d="M 0 70 Q 75 39, 150 70 T 300 70 T 450 70 T 600 70 T 750 70 V 100 H 0 V 0"></path>
+					        <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="-300" dur="1.5s" repeatCount="indefinite"></animateTransform>
+					    </g>
+					    <g fill="rgba(255,255,255,0.15)">
+					        <path d="M 0 70 Q 87.5 47, 175 70 T 350 70 T 525 70 T 700 70 T 875 70 T 1050 70 V 100 H 0 V 0"></path>
+					        <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="-350" dur="3s" repeatCount="indefinite"></animateTransform>
+					    </g>
+					    <g fill="rgba(255,255,255,0.18)" transform="translate(-903.868 0)">
+					        <path d="M 0 70 Q 135 36, 270 70 T 540 70 T 810 70 T 1080 70 V 100 H 0 V 0" transform="translate(-38.232284367796474, 0)"></path>
+					        <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="-540" dur="2s" repeatCount="indefinite"></animateTransform>
+					    </g>
+					</svg> 
 				</div>
 				
 		        <!--九宫格-->
 		        <div class="nine">
-		        	<div class="nine-goannouncement mui-hidden" id="announcement"><a>
-		        			<span class="icon-nine-adv nine-icon">
-		        				<!--<span class="nine-num">5</span>-->
-		        			</span>
-		        			<p>物业公告</p>
+		        	<div class="nine-gosale"><a>
+		        			<!--<span class="icon-nine-adv nine-icon">
+		        				<span class="nine-num">5</span>
+		        			</span>-->
+		        			<img class="img-icon" src="images/sale.png"/>
+		        			<p>校园特卖</p>
 		        			
 		        		</a></div>
-		        	<div class="nine-gochat showbtn mui-hidden" id="one"><a>
-		        			<span class="icon-nine-chat nine-icon">
-		        				<!--<span class="nine-num">5</span>-->
-		        			</span>
-		        			<p>社区动态</p>
+		        	<div class="nine-goactivity"><a>
+		        			<!--<span class="icon-nine-chat nine-icon">
+		        				<span class="nine-num">5</span>
+		        			</span>-->
+		        			<img class="img-icon" src="images/ac2.png"/>
+		        			<p>活动报名</p>
+		        	</a></div>
+		        	
+		        	
+		        
+		        	<div class="nine-gostudy"><a>
+		        			<!--<span class="icon-nine-cartime nine-icon">
+		        				<span class="nine-num warn-car" style="display: none;">0</span>
+		        			</span>-->
+		        			<img class="img-icon" src="images/study.png"/>
+		        			<p>学习交流</p>
+		        	</a></div>
+		        	<div class="nine-gowork"><a>
+		        			<!--<span class="icon-nine-yeweihui nine-icon"></span>-->
+		        			<img class="img-icon" src="images/work.png"/>
+		        			<p>勤工俭学</p>
 		        		</a></div>
-		        	<div class="nine-gooperate mui-hidden" id="repairManage"><a>
-		        			<span class="icon-nine-operate nine-icon">
-		        				<span class="nine-num" id="repairNum" style="display: none;">0</span>
-		        			</span>
-		        			<p>报修</p>
-		        		</a></div>
-		        	<div class="nine-advise mui-hidden" id="suggest"><a>
-		        			<span class="icon-nine-bad nine-icon"></span>
-		        			<p>建议物业</p>
-		        		</a></div>
-		        	<div class="nine-praise mui-hidden" id="praise"><a>
-		        			<span class="icon-nine-good nine-icon"></span>
-		        			<p>表扬物业</p>
-		        		</a></div>
-		        	<div class="nine-gobad mui-hidden" id="complain"><a>
-		        			<span class="icon-nine-chaping nine-icon"></span>
-		        			<p>投诉物业</p>
-		        		</a></div>
-		        	<div class="nine-gomobile mui-hidden" id="phoneManage"><a>
-		        			<span class="icon-nine-mobile nine-icon"></span>
+		        	<div class="nine-gomobile"><a>
+		        		<!--	<span class="icon-nine-mobile nine-icon"></span>-->
+		        		<img class="img-icon" src="images/tel1.png"/>
 		        			<p>常用电话</p>
 		        		</a></div>
-		        	
-		        	<!--<div class="nine-gostopcar"><a>
-		        			<span class="icon-nine-carstop nine-icon">
-		        				<span class="nine-num">5</span>
-		        			</span>
-		        			<p>临时车辆</p>
-		        	</a></div>-->
-		        	<div class="nine-gocar mui-hidden" id="parkingManage"><a>
-		        			<span class="icon-nine-cartime nine-icon">
-		        				<span class="nine-num warn-car" style="display: none;">0</span>
-		        			</span>
-		        			<p>智慧停车</p>
-		        	</a></div>
-		        	<div class="nine-gocommittee mui-hidden" id="ownersCommitteeManage"><a>
-		        			<span class="icon-nine-yeweihui nine-icon"></span>
-		        			<p>业委会</p>
-		        		</a></div>
-		        	<div class="nine-goauth mui-hidden" id="originalManage"><a>
-		        			<span class="icon-nine-yanzheng nine-icon"></span>
-		        			<p>业主验证</p>
-		        		</a></div>
-		        	<div class="nine-goabout showbtn" id="two"><a>
-		        			<span class="icon-call nine-icon"></span>
+		        	<div class="nine-goabout"><a>
+		        			<!--<span class="icon-call nine-icon"></span>-->
+		        			<img class="img-icon" src="images/about1.png"/>
 		        			<p>联系我们</p>
 		        	</a></div>
 		        	
 		        </div>
 		</div>
 		
-		
-		<div id="popover" class="mui-popover mui-scroll">
-		  <ul class="mui-table-view">
-		    <li class="mui-table-view-cell">春和景明</li>
-		    <li class="mui-table-view-cell">双福大厦</li>
-		    <li class="mui-table-view-cell">依山半岛</li>
-		  </ul>
-		</div>
-		
+	
 		
 		
 		

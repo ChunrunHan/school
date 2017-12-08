@@ -41,39 +41,15 @@ define(['mui', 'md5', 'mall', 'updata'], function(mui, md5, $, updata) {
 		// 自动登录
 		if(plus.storage.getItem('autologin') === "true") {
 			var mobile = plus.storage.getItem('mobile');
+			var password = plus.storage.getItem('password');
 			document.getElementById('mobile').value = mobile;
-			plus.nativeUI.showWaiting('登录中');
-			console.log("auto login");
-			urlBase = plus.storage.getItem('urlBaseP');
-			zoneId = plus.storage.getItem('zoneId');
-//			updata.setUrl(urlBaseP);
-//			updata.updata(true, 1);
-//			console.log(urlBaseP);
-			var url = urlBase + '/zone/feed/1/list/0/99';
-			$.get(url).then(function(data) {
-				console.log('返回的数据：' + JSON.stringify(data));
-
-				console.log('预加载首页啊');
-
-				mui.preload({
-					url: 'index.html',
-					id: 'index.html'
-				});
-
-
-			}).fail(function(status) {
-				console.log('自动登录啊啊啊啊' + status);
-				
-			}
+			userLogin1(mobile, password);
 		}
 		
 		
 		//	用户登录请求
 		function userLogin1(mobile, password) {
 			plus.nativeUI.showWaiting('登录中');
-		//		urlBase = plus.storage.getItem('urlBase');
-		//		updata.setUrl(urlBaseP);
-		//		updata.updata(true, 1);
 				var url = urlBase + '/user/login/' + mobile + '/' + password;
 				console.log(url);
 				$.get(url).then(function(data) {
@@ -81,6 +57,15 @@ define(['mui', 'md5', 'mall', 'updata'], function(mui, md5, $, updata) {
 					console.log(data);
 					console.log(JSON.stringify(data));
 					mui.toast(data.errMsg);
+					if(data.errCode == 0){
+						plus.storage.setItem('mobile',mobile);
+						plus.storage.setItem('mobile',password);
+						mui.openWindow({
+							url: 'index.html',
+							id: 'index.html'
+						});
+						
+					}
 			
 				}).fail(function(status) {
 					console.log('登录失败')

@@ -43,6 +43,8 @@
 			<h1 class="mui-title">用户注册</h1>
 			<!--<a class="mui-pull-right mui-action-back goods-save font-16px">提交</a>-->
 		</header>
+		
+		
 
 		<div class="mui-content">
 			<div class="mui-scroll">
@@ -82,7 +84,8 @@
 					
 				</form>
 
-				
+			
+				<input type="file" id="file" accept="image/gif, image/jpeg" />
 				<button id='seller-submit' class="mui-btn switch-commit seller-save mgt-20">提交</button>
 
 			</div>
@@ -91,12 +94,13 @@
 
 		
 		
-
+		<script src="js/lib/aliyun-oss-sdk.min.js"></script>
 		<script src="js/common.js"></script>
 		<script src="js/lib/require.js"></script>
 		<script>
 			require(['app/user_regist']);
 		</script>
+		
 	</body>
 
 </html>

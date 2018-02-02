@@ -150,7 +150,7 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 				type: 'post',
 				timeout: timeout,
 //				headers: header(url, data),
-				headers:{'Content-Type':'application/json'},
+//				headers:{'Content-Type':'application/json'},
 				success: function(data) {
 					//defer.notify(data);
 					defer.resolve(data);
@@ -258,9 +258,8 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 				var ossKeyId = sts.accessKeyId;
 				var signature = sts.signature;
 				var policy = sts.policy;
-//				var dir = ;
-//				var host = sts.host;
-				var host = 'http://zaoyuan.oss-cn-qingdao.aliyuncs.com';
+				var host = sts.host;
+//				var host = 'http://zaoyuan.oss-cn-qingdao.aliyuncs.com';
 				
 				if (ossKeyId === undefined || signature === undefined) {
 					defer.reject(ERROR.INVALID_PARAMS);
@@ -284,8 +283,10 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 					},
 					function(t, status) {
 						plus.nativeUI.closeWaiting();
-						mui.toast('上传成功');
+						console.log(JSON.stringify(t));
+						console.log(status)
 						if(status == 200) {
+							mui.toast('上传成功');
 							defer.resolve(filename);
 						} else {
 							defer.reject(status);
@@ -299,6 +300,13 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 				task.addData("success_action_status", "200");
 				task.addData("signature", signature);
 				
+				console.log('- - - - - - - - - - ')
+				console.log('key|' + keyname)
+				console.log('policy|' + policy)
+				console.log('OSSAccessKeyId|' + ossKeyId)
+				console.log('success_action_status|' + 200)
+				console.log('signature|' + signature)
+				console.log('- - - - - - - - - - ')
 				task.addFile(source, {
 					key: "file",
 					name: "file",
@@ -309,6 +317,41 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 			});
 			
 			return defer.promise;
+		},
+		// 上传图片
+		imgUpdate: function(dir,source){
+			console.log('ossUpload(' + source + ')');
+			var defer = Q.defer();
+			if (this.isNullOrUndefined(source)) {
+				defer.reject(ERROR.FILE_INVALID);
+				return defer.promise;
+			}
+			var host = urlBaseP + '/imgUpdate';
+			console.log(host);
+			var pos = source.lastIndexOf('.');
+			var suffix = source.substring(pos).toLowerCase();
+			var filename = uuid().replace(/-/,'') + suffix;
+			var keyname = dir +'/'+ filename;
+			
+			plus.nativeUI.showWaiting('上传中');
+			var task = 	plus.uploader.createUpload(host,{
+				method: 'POST'
+			},function(upload,status){
+				if(status == 200 ){
+					mui.toast('上传成功');
+					defer.resolve(filename);
+				}else{
+					defer.reject(status);
+				}
+				
+			});
+			
+			task.addFile(source, {
+					key: "file",
+					name: keyname,
+					mime: "image/jpeg"
+				});
+			task.start();
 		},
 		
 		// get post signature
@@ -331,16 +374,16 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 //			}
 //			urlBaseP = plus.storage.getItem('urlBaseP');
 //			var url = urlBaseP + '/sign';
-			var url = urlBase + '/school/sts';
+			var url = urlBase + '/sts';
 			console.log(url)
 			this.get(url).then(function(sts) {
-				if (sts.errCode !== 0) defer.reject(sts.errorCode);
+				if (sts.StatusCode !== 200) defer.reject(sts.errorCode);
 				console.log('sts=' + JSON.stringify(sts));
         
-	            var data = new Object();
-	            data.sts = sts.data;
+//	            var data = new Object();
+//	            data.sts = sts.data;
 //	            plus.storage.setItem(mobileP, JSON.stringify(data));
-	            defer.resolve(data.sts);
+	            defer.resolve(sts);
 	            
 			}).fail(function(status) {
 				console.log('fail to update sts: ' + status);

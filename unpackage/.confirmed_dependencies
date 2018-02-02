@@ -167,13 +167,15 @@
   "login.html": {
     "refer": [
       "forget_password.html",
-      "user_regist.html"
+      "user_regist.html",
+      "index.html"
     ],
     "resources": []
   },
   "user_regist.html": {
     "refer": [
       "clip_img.html"
-    ]
+    ],
+    "resources": []
   }
 }

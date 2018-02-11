@@ -4,7 +4,7 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 	});
 
 	var old_back = mui.back;
-
+	var userLogo = '';
 	mui.plusReady(function() {
 		console.log('seller_edit plus ready');
 		plus.screen.lockOrientation("portrait-primary");
@@ -17,13 +17,13 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 			selector: '.seller-save',
 			callback: function() {
 				getUserInfo();
-//				var path = document.querySelector('.img-logo').getAttribute('src');
-//				alert(path);
-//				if(path == "images/header1.png") {
-//					mui.alert('请上传头像')
-//				} else {
-//					appendFile(path)
-//				}
+				var path = document.querySelector('.img-logo').getAttribute('src');
+				alert(path);
+				if(path == "images/header1.png") {
+					mui.alert('请上传头像')
+				} else {
+					getUserInfo();
+				}
 
 			}
 		});
@@ -33,7 +33,7 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 			selector: '.img-logo',
 			callback: function() {
 				console.log('点击头像');
-				//				showActionSheetone();
+//				showActionSheetone();
 				galleryImg()
 				return false;
 			}
@@ -41,100 +41,6 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 
 	});
 
-	document.getElementById('file').addEventListener('change', function(e) {
-		var file = e.target.files[0];
-		console.log(file)
-		readerFile(file);
-
-		console.log(file)
-		var storeAs = uuid() + postf(file.name);
-		console.log(postf(file.name));
-		console.log(file.name + ' => ' + storeAs);
-		var stsurl = urlBase + '/sts';
-		console.log(stsurl)
-		OSS.urllib.request(stsurl, {
-				method: 'GET'
-			},
-			function(err, response) {
-				if(err) {
-					return alert(err);
-				}
-				try {
-					result = JSON.parse(response);
-				} catch(e) {
-					return alert('parse sts response info error: ' + e.message);
-				}
-				console.log(result)
-				console.log(JSON.stringify(result))
-				var client = new OSS.Wrapper({
-					accessKeyId: result.AccessKeyId,
-					accessKeySecret: result.AccessKeySecret,
-					stsToken: result.SecurityToken,
-					endpoint: 'oss-cn-qingdao.aliyuncs.com',
-					bucket: 'zaoyuan'
-				});
-				client.multipartUpload(storeAs, file).then(function(result) {
-					console.log(JSON.stringify(result));
-				}).catch(function(err) {
-					console.log(err);
-				});
-			});
-	});
-
-	function postf(fileName) {
-		return fileName.substring(fileName.lastIndexOf("."), fileName.length); //后缀名
-	}
-
-	function uuid() {
-		var lut = [];
-		for(var i = 0; i < 256; i++) {
-			lut[i] = (i < 16 ? '0' : '') + (i).toString(16);
-		}
-		var d0 = Math.random() * 0xffffffff | 0;
-		var d1 = Math.random() * 0xffffffff | 0;
-		var d2 = Math.random() * 0xffffffff | 0;
-		var d3 = Math.random() * 0xffffffff | 0;
-		return lut[d0 & 0xff] + lut[d0 >> 8 & 0xff] + lut[d0 >> 16 & 0xff] + lut[d0 >> 24 & 0xff] +
-			lut[d1 & 0xff] + lut[d1 >> 8 & 0xff] + lut[d1 >> 16 & 0x0f | 0x40] + lut[d1 >> 24 & 0xff] +
-			lut[d2 & 0x3f | 0x80] + lut[d2 >> 8 & 0xff] + lut[d2 >> 16 & 0xff] + lut[d2 >> 24 & 0xff] +
-			lut[d3 & 0xff] + lut[d3 >> 8 & 0xff] + lut[d3 >> 16 & 0xff] + lut[d3 >> 24 & 0xff];
-	}
-
-	function readerFile(file) {
-		//	新建阅读器
-		var reader = new FileReader();
-
-		//根据文件类型选择阅读方式
-		switch(file.type) {
-			//图像类型读取方式
-			case 'image/jpeg':
-			case 'image/jpg':
-			case 'image/png':
-			case 'image/gif':
-			case 'image/bmp':
-				reader.readAsDataURL(file);
-				break;
-
-		}
-		//        当文件阅读结束后执行的方法
-		reader.addEventListener('load', function() {
-			switch(file.type) {
-				//图像读取和创建标签
-				case 'image/jpeg':
-				case 'image/png':
-				case 'image/gif':
-				case 'image/bmp':
-				case 'image/jpg':
-
-					var space = reader.result;
-					//							console.log(space)
-					//							document.getElementById('imgs').setAttribute('src', space)
-					document.querySelector('.img-logo').setAttribute('src', space)
-					break;
-			}
-		});
-
-	}
 
 	// 相册选取
 	function galleryImg() {
@@ -215,12 +121,12 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 		plus.zip.compressImage({
 				src: path,
 				dst: '_downloads/' + 'zip_' + filename,
-				quality: 60
+				quality: 80
 			},
 			function(event) {
 				plus.nativeUI.closeWaiting();
 				document.querySelector('.img-logo').setAttribute('src', event.target);
-
+				appendFile(path)
 			},
 			function(error) {
 				mui.toast('选取失败');
@@ -234,7 +140,7 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 		$.ossUpload(path).then(function(file) {
 			console.log('upload done:' + file);
 			plus.nativeUI.closeWaiting();
-			//			getValue(file);
+			userLogo = file;
 		}).fail(function(status) {
 			console.log('failed to upload');
 			statusHandler(status);
@@ -242,27 +148,27 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 
 	}
 	//	图片删除
-	function deleteFile(oldname) {
-		bucket = plus.storage.getItem('bucket');
-		var delfile = [{
-			bucket: bucket,
-			object: oldname
-		}]
-		plus.nativeUI.showWaiting('删除中');
-		console.log('删除的文件名字： ' + delfile);
-		var url = urlBase + '/oss/del';
-		$.post(url, delfile).then(function(data) {
-			plus.nativeUI.closeWaiting();
-			if(data.code === 0) {
-				mui.toast('头像更换成功')
-			}
-
-		}).fail(function(status) {
-			plus.nativeUI.closeWaiting();
-			console.log('图片删除' + status);
-			statusHandler(status);
-		})
-	}
+//	function deleteFile(oldname) {
+//		bucket = plus.storage.getItem('bucket');
+//		var delfile = [{
+//			bucket: bucket,
+//			object: oldname
+//		}]
+//		plus.nativeUI.showWaiting('删除中');
+//		console.log('删除的文件名字： ' + delfile);
+//		var url = urlBase + '/oss/del';
+//		$.post(url, delfile).then(function(data) {
+//			plus.nativeUI.closeWaiting();
+//			if(data.code === 0) {
+//				mui.toast('头像更换成功')
+//			}
+//
+//		}).fail(function(status) {
+//			plus.nativeUI.closeWaiting();
+//			console.log('图片删除' + status);
+//			statusHandler(status);
+//		})
+//	}
 
 	//	提交数据
 	function getUserInfo() {
@@ -270,8 +176,8 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 		var mobile = document.getElementById('mobile').value;
 		var password = document.getElementById('password').value;
 		var repassword = document.getElementById('repassword').value;
-		if(username == '' || mobile == '' || password == '') {
-			mui.toast('用户名、手机号、密码不能为空');
+		if(username == '' || mobile == '' || password == ''|| userLogo == '') {
+			mui.toast('头像、用户名、手机号、密码不能为空');
 		} else {
 			if(repassword == '') {
 				mui.toast('请输入确认密码');
@@ -286,7 +192,8 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 							username: username,
 							mobile: mobile,
 							password: password,
-							role:0
+							role:0,
+							avatar: userLogo
 						}
 						console.log(json);
 						userRegion(json)

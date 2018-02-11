@@ -255,15 +255,17 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 			}
 
 			this.stsUpdate().then(function(sts) {
-				var ossKeyId = sts.accessKeyId;
-				var signature = sts.signature;
-				var policy = sts.policy;
-				var host = sts.host;
-//				var host = 'http://zaoyuan.oss-cn-qingdao.aliyuncs.com';
+				console.log(JSON.stringify(sts))
+				var accessKeyId = sts.AccessKeyId;
+				var accessKeySecret = sts.AccessKeySecret;
+				var stsToken = sts.SecurityToken;
+				var endpoint = 'oss-cn-qingdao.aliyuncs.com';
+				var bucket = 'zaoyuan';
+				var host = 'http://zaoyuan.oss-cn-qingdao.aliyuncs.com';
 				
-				if (ossKeyId === undefined || signature === undefined) {
-					defer.reject(ERROR.INVALID_PARAMS);
-				}
+//				if (ossKeyId === undefined || signature === undefined) {
+//					defer.reject(ERROR.INVALID_PARAMS);
+//				}
 				
 				var pos = source.lastIndexOf('.');
 				var suffix = source.substring(pos).toLowerCase();
@@ -274,10 +276,10 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 					return;
 				}
 				var filename = uuid().replace(/-/,'') + suffix;
-//				var keyname = dir + filename;
 				var keyname = filename;
+				console.log(keyname)
 				
-				plus.nativeUI.showWaiting('上传中');
+//				plus.nativeUI.showWaiting('上传中');
 				var task = plus.uploader.createUpload(host, {
 						method: "POST"
 					},
@@ -295,18 +297,13 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 				);
 				
 				task.addData("key", keyname);
-				task.addData("policy", policy);
-				task.addData("OSSAccessKeyId", ossKeyId);
+				task.addData("accessKeyId", accessKeyId);
+				task.addData("accessKeySecret", accessKeySecret);
 				task.addData("success_action_status", "200");
-				task.addData("signature", signature);
-				
-				console.log('- - - - - - - - - - ')
-				console.log('key|' + keyname)
-				console.log('policy|' + policy)
-				console.log('OSSAccessKeyId|' + ossKeyId)
-				console.log('success_action_status|' + 200)
-				console.log('signature|' + signature)
-				console.log('- - - - - - - - - - ')
+				task.addData("stsToken", stsToken);
+				task.addData("bucket", bucket);
+				task.addData("endpoint", endpoint);
+
 				task.addFile(source, {
 					key: "file",
 					name: "file",
@@ -373,7 +370,7 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 //				}
 //			}
 //			urlBaseP = plus.storage.getItem('urlBaseP');
-//			var url = urlBaseP + '/sign';
+//			var url = urlBaseP + '/sts';
 			var url = urlBase + '/sts';
 			console.log(url)
 			this.get(url).then(function(sts) {

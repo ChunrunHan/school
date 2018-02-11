@@ -55,8 +55,8 @@ var require = {
 	waitSeconds: 0
 };
 
-var urlBase = 'http://www.rainrain.xin:12345/school';
-//var urlBase = 'http://192.168.1.110:12345/school';
+//var urlBase = 'http://www.rainrain.xin:12345/school';
+var urlBase = 'http://192.168.31.13:12345/school';
 var bucketP;
 //var appKey = '0de446ad-eae2-4e55-8a8e-04951d5c220b';
 //var appSource = 'app_wuye';

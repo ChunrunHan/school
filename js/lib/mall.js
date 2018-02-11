@@ -263,10 +263,6 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 				var bucket = 'zaoyuan';
 				var host = 'http://zaoyuan.oss-cn-qingdao.aliyuncs.com';
 				
-//				if (ossKeyId === undefined || signature === undefined) {
-//					defer.reject(ERROR.INVALID_PARAMS);
-//				}
-				
 				var pos = source.lastIndexOf('.');
 				var suffix = source.substring(pos).toLowerCase();
 //				alert('suffix' + suffix);
@@ -279,7 +275,6 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 				var keyname = filename;
 				console.log(keyname)
 				
-//				plus.nativeUI.showWaiting('上传中');
 				var task = plus.uploader.createUpload(host, {
 						method: "POST"
 					},
@@ -384,6 +379,8 @@ define(['q', 'md5', 'mui', 'mustache'], function(Q, md5, mui, m) {
 	            
 			}).fail(function(status) {
 				console.log('fail to update sts: ' + status);
+				plus.nativeUI.closeWaiting();
+				mui.toast('上传失败');
 				defer.reject(status);
 			});
 			

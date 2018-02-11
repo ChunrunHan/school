@@ -18,7 +18,7 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 			callback: function() {
 				getUserInfo();
 				var path = document.querySelector('.img-logo').getAttribute('src');
-				alert(path);
+//				alert(path);
 				if(path == "images/header1.png") {
 					mui.alert('请上传头像')
 				} else {
@@ -232,6 +232,7 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 		document.getElementById('mobile').value = '';
 		document.getElementById('password').value = '';
 		document.getElementById('repassword').value = '';
+		document.querySelector('.img-logo').setAttribute('src', 'images/header1.png');
 	}
 
 });

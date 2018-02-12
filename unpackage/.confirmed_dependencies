@@ -4,7 +4,8 @@
       "common_telephone_sub.html"
     ],
     "refer": [
-      "common_telephone_sub.html"
+      "common_telephone_sub.html",
+      "common_telephone_add.html"
     ]
   },
   "index.html": {
@@ -18,7 +19,9 @@
       "community_dynamics.html",
       "advise_property.html",
       "vehicle_management.html",
-      "critica_property.html"
+      "critica_property.html",
+      "setting.html",
+      "about.html"
     ],
     "resources": []
   },
@@ -175,6 +178,15 @@
   "user_regist.html": {
     "refer": [
       "clip_img.html"
+    ],
+    "resources": []
+  },
+  "setting.html": {
+    "refer": [
+      "modify_mobile.html",
+      "forget_password.html",
+      "account.html",
+      "user_edit.html"
     ],
     "resources": []
   }

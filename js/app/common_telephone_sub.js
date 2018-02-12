@@ -93,10 +93,9 @@ define(['mui', 'mall'], function(mui, $) {
 	function getData(page, pageSize, isUp) {
 		console.log('getData(' + page + ',' + pageSize + ',' + isUp + ')');
 		plus.nativeUI.showWaiting();
-		zoneId = plus.storage.getItem('zoneId');
 		urlBaseP = plus.storage.getItem('urlBaseP');
-		var url = urlBaseP + '/admin/phone/search/' + zoneId + '//' + page + '/' + pageSize;
-
+		var url = urlBase + '/phone/search/' + page + '/' + pageSize;
+		console.log(url)
 		$.get(url).then(function(data) {
 			plus.nativeUI.closeWaiting();
 			console.log('所有的电话信息(' + JSON.stringify(data) + ')');
@@ -165,7 +164,6 @@ define(['mui', 'mall'], function(mui, $) {
 
 		}).fail(function(status) {
 			stopDownRefresh('#refreshContainer', isUp);
-			console.log('初始化获得用户分类'+ status)
 			statusHandler(status);
 		});
 	}

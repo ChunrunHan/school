@@ -49,6 +49,11 @@ define(['mui', 'md5', 'mall', 'updata'], function(mui, md5, $, updata) {
 		
 		//	用户登录请求
 		function userLogin1(mobile, password) {
+			var showRole = {
+				0: '学生',
+				1: '管理员',
+				2: '超级管理员'
+			}
 			plus.nativeUI.showWaiting('登录中');
 				var url = urlBase + '/user/login/' + mobile + '/' + password;
 				console.log(url);
@@ -59,7 +64,12 @@ define(['mui', 'md5', 'mall', 'updata'], function(mui, md5, $, updata) {
 					mui.toast(data.errMsg);
 					if(data.errCode == 0){
 						plus.storage.setItem('mobile',mobile);
-						plus.storage.setItem('mobile',password);
+						plus.storage.setItem('password',password);
+						plus.storage.setItem('userId',data.dataList[0].id);
+						plus.storage.setItem('username',data.dataList[0].username);
+						plus.storage.setItem('avatar',data.dataList[0].avatar);
+						data.dataList[0].role = showRole[data.dataList[0].role];
+						plus.storage.setItem('role',data.dataList[0].role);
 						mui.openWindow({
 							url: 'index.html',
 							id: 'index.html'
@@ -72,7 +82,8 @@ define(['mui', 'md5', 'mall', 'updata'], function(mui, md5, $, updata) {
 					statusHandler(status);
 				});
 		}
-
+		
+		
 	});
 
 

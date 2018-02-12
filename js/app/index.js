@@ -11,28 +11,39 @@ define(['mui', 'mall'], function(mui, $) {
 			popGesture: 'none'
 		});
 
+		var avatar = plus.storage.getItem('avatar');
+		var nickname = plus.storage.getItem('username');
+		var rolename = plus.storage.getItem('role');
+		
+		if(avatar !== null) {
+			userimg = "http://zaoyuan.oss-cn-qingdao.aliyuncs.com/" + avatar + '!thumbnail';
+		} else {
+			userimg = 'images/logo.jpg';
+		}
+		console.log(userimg);
+		document.querySelector('.top-logo').setAttribute('src', userimg);
+		document.querySelector('.top-username').innerText = nickname;
+		document.querySelector('.top-userrole').innerText = rolename;
 		//	刷新用户头像
 		window.addEventListener('refreshInName', function() {
-			avatar = plus.storage.getItem('avatar');
-			nickname = plus.storage.getItem('nickname');
+			var avatar = plus.storage.getItem('avatar');
+			var nickname = plus.storage.getItem('username');
 			if(avatar !== null) {
-				userimg = "http://" + bucketP + ".oss-cn-qingdao.aliyuncs.com/" + userSsoId + '/' + avatar + '.jpg';
+				userimg = "http://zaoyuan.oss-cn-qingdao.aliyuncs.com/" + avatar + '!thumbnail';
 			} else {
 				userimg = 'images/logo.jpg';
 			}
 			console.log(userimg);
 			document.querySelector('.top-logo').setAttribute('src', userimg);
-			document.querySelector('.top-role').innerText = nickname;
+			document.querySelector('.top-username').innerText = nickname;
 		});
-
-	
 
 		mui.toast('用户登录成功');
 		plus.nativeUI.closeWaiting();
 		plus.webview.currentWebview().show();
 
 		//		---------------------------------------------------------
-		
+
 		//	用户信息
 		$.tapHandler({
 			selector: '.top-logo',
@@ -67,7 +78,6 @@ define(['mui', 'mall'], function(mui, $) {
 			event: 'getAdivise'
 		});
 
-
 		//	常用电话
 		$.tapHandler({
 			selector: '.nine-gomobile',
@@ -81,7 +91,6 @@ define(['mui', 'mall'], function(mui, $) {
 		//	跳转到设置
 		$.tapHandler('.icon-sz', 'setting.html');
 
-
 		//	返回退出程序
 		mui.back = function() {
 			var btn = ["确定", "取消"];
@@ -92,9 +101,6 @@ define(['mui', 'mall'], function(mui, $) {
 			});
 		}
 
-})
-
-	
-	
+	})
 
 });

@@ -14,17 +14,16 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 
 		//	提交申请注册
 		$.tapHandler({
-			selector: '.seller-save',
+			selector: '#seller-submit',
 			callback: function() {
-				getUserInfo();
 				var path = document.querySelector('.img-logo').getAttribute('src');
-//				alert(path);
 				if(path == "images/header1.png") {
-					mui.alert('请上传头像')
+					mui.toast('请上传头像')
 				} else {
 					getUserInfo();
+					return false;
 				}
-
+				
 			}
 		});
 
@@ -33,7 +32,6 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 			selector: '.img-logo',
 			callback: function() {
 				console.log('点击头像');
-//				showActionSheetone();
 				galleryImg()
 				return false;
 			}
@@ -213,7 +211,7 @@ define(['mui', 'mall', 'md5'], function(mui, $, md5) {
 			console.log(data);
 			console.log(JSON.stringify(data));
 			mui.toast(data.errMsg);
-			mui.back();
+//			mui.back();
 		}).fail(function(status) {
 			statusHandler(status);
 			console.log(status);

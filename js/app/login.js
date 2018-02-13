@@ -5,7 +5,7 @@ define(['mui', 'md5', 'mall', 'updata'], function(mui, md5, $, updata) {
 		console.log('login plus ready');
 		plus.screen.lockOrientation("portrait-primary");
 		plus.navigator.setStatusBarBackground("#c01e2f");
-
+		console.log(urlBase)
 		
 		//	跳转到忘记密码页面
 		$.tapHandler('#forget-password', 'forget_password.html');

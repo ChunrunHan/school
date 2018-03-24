@@ -16,7 +16,12 @@ define(['mui', 'mall'], function(mui, $) {
 	var telPriorityName;
 	mui.plusReady(function() {
 		plus.screen.lockOrientation("portrait-primary");
-
+		console.log(plus.storage.getItem('role'));
+		console.log(typeof plus.storage.getItem('role'));
+		if(plus.storage.getItem('role')!=0){
+			document.querySelector('#addPhone').classList.remove('mui-hidden')
+		}
+		
 		//	新增电话
 		$.tapHandler({
 			selector: '.icon-add',

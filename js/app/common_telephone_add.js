@@ -11,41 +11,41 @@ define(['mui', 'mall'], function(mui, $) {
 		zoneId = plus.storage.getItem('zoneId');
 
 		//	选择优先级
-		$.tapHandler({
-			selector: '#priority-select',
-			callback: function() {
-				pickerBlur();
-				mui('#sheet2').popover('toggle');
-			}
-		});
-		//	入驻品类显示
-		$.tapHandler({
-			selector: '.priority-list',
-			id: 'priority',
-			callback: function(id) {
-				console.log(id);
-				telPriority = parseInt(id);
-				switch(telPriority) {
-					case 1:
-						telPriorityName = '低';
-						break;
-					case 2:
-						telPriorityName = '较低';
-						break;
-					case 3:
-						telPriorityName = '中';
-						break;
-					case 4:
-						telPriorityName = '较高';
-						break;
-					case 5:
-						telPriorityName = '高';
-						break;
-				}
-				document.getElementById('priority-select').value = telPriorityName;
-				mui('#sheet2').popover('toggle');
-			}
-		});
+//		$.tapHandler({
+//			selector: '#priority-select',
+//			callback: function() {
+//				pickerBlur();
+//				mui('#sheet2').popover('toggle');
+//			}
+//		});
+//		//	入驻品类显示
+//		$.tapHandler({
+//			selector: '.priority-list',
+//			id: 'priority',
+//			callback: function(id) {
+//				console.log(id);
+//				telPriority = parseInt(id);
+//				switch(telPriority) {
+//					case 1:
+//						telPriorityName = '低';
+//						break;
+//					case 2:
+//						telPriorityName = '较低';
+//						break;
+//					case 3:
+//						telPriorityName = '中';
+//						break;
+//					case 4:
+//						telPriorityName = '较高';
+//						break;
+//					case 5:
+//						telPriorityName = '高';
+//						break;
+//				}
+//				document.getElementById('priority-select').value = telPriorityName;
+//				mui('#sheet2').popover('toggle');
+//			}
+//		});
 
 		$.tapHandler({
 			selector: '.tel-save',

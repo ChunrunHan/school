@@ -2,21 +2,22 @@
 <li>
 	<p>
 		<img class="user-logo" src="{{avatar}}" alt="" width="40px" height="40px" onerror="javascript:this.src='images/default_header.png'"/>
-		<span class="user-name color-black">{{nickName}}</span>
+		<span class="user-name color-black">{{username}}</span>
+		<img class="delInfo {{delShow}}"  infoId="{{id}}" style="float: right; position: relative;top: 10px;" src="images/delete.svg" alt="" width="20px" height="20px" />
 	</p>
 	<p class="user-comment">
-		{{text}}
+		{{content}}
 	</p>
 	
 	<div class="content-img {{boxshow}}">
-		{{#images}}
+		{{#image}}
 		<img class="{{show}}" src="{{.}}" height="auto" width="30%"  onerror="javascript:this.src='images/default_goods.png'">
-		{{/images}}
+		{{/image}}
 	</div>
 
 	<div class="comment-bottom mui-clearfix">
-		<span class="mui-pull-left">{{publishTime}}</span>
-		<div class="mui-pull-right">
+		<span class="mui-pull-left">{{createTime}}</span>
+		<!--<div class="mui-pull-right">
 			<p>
 				<img  id="{{id}}id" class="comment-detail {{id}}" src="images/comment.svg" alt=""  infoId="{{id}}:{{totalComments}}:{{totalLikes}}:{{like}}" />
 				<span class="content-num">{{totalComments}}</span>
@@ -25,7 +26,7 @@
 				<img class="praise-hand" src="{{handsrc}}" alt="" praise='{{praise}}' classId ="{{id}}"  totalLikes="{{totalLikes}}" infoId="{{id}}:{{totalComments}}:{{totalLikes}}:{{like}}" />
 				<span class="praise-num" id="{{id}}">{{totalLikes}}</span>
 			</p>
-		</div>
+		</div>-->
 
 	</div>
 </li>

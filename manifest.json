@@ -281,7 +281,9 @@
 				"resources": [
 					"community_dynamics_sub.html"
 				],
-				"refer": [],
+				"refer": [
+					"community_dynamics_add.html"
+				],
 				"priority": 0
 			},
 			"advise_property.html": {
@@ -385,12 +387,24 @@
 				"priority": 0
 			},
 			"setting.html": {
-				"resources": [],
+				"resources": [
+					"js/common.js",
+					"js/lib/require.js",
+					"css/mui.min.css",
+					"css/style.css"
+				],
 				"refer": [
 					"modify_mobile.html",
 					"forget_password.html",
 					"account.html",
 					"user_edit.html"
+				],
+				"priority": 0
+			},
+			"community_dynamics_sub.html": {
+				"resources": [],
+				"refer": [
+					"show_img.html"
 				],
 				"priority": 0
 			}
@@ -463,7 +477,6 @@
 				"js/app/praise_property_sub.js",
 				"tpl/warn_car_sub_data.html",
 				"js/app/advise_property_detail.js",
-				"js/lib/require.js",
 				"images/f-time.svg",
 				"js/app/white_record_vip.js",
 				"tpl/finance_manage_income_data.html",
@@ -551,12 +564,9 @@
 				"js/app/common_telephone_add.js",
 				"tpl/black_record_data.html",
 				"finance_manage_detail.html",
-				"community_dynamics_add.html",
 				"temporary_vehicle_add_enter.html",
 				"fonts/car.woff",
-				"js/common.js",
 				"fonts/add.woff",
-				"show_img.html",
 				"images/authlogo.svg",
 				"images/praise.svg",
 				"images/good.svg",
@@ -636,7 +646,6 @@
 				"js/app/inout_record.js",
 				"userauth_failed.html",
 				"js/app/common_telephone.js",
-				"css/mui.min.css",
 				"Audio/newOrder.mp3",
 				"js/app/praise_property.js",
 				"css/userauth.css",
@@ -707,7 +716,6 @@
 				"js/app/feedback.js",
 				"js/lib/updata.js",
 				"fonts/add.eot",
-				"css/style.css",
 				"js/app/temporary_vehicle_add_car_sub.js",
 				"js/app/black_record_add.js",
 				"css/mui.picker.css",

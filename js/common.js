@@ -56,8 +56,8 @@ var require = {
 };
 
 //var urlBase = 'http://www.rainrain.xin:12345/school';
-//var urlBase = 'http://192.168.31.13:12345/school';
-var urlBase = 'http://192.168.1.108:12345/school'
+var urlBase = 'http://192.168.31.13:12345/school';
+//var urlBase = 'http://192.168.1.108:12345/school'
 var bucketP;
 //var appKey = '0de446ad-eae2-4e55-8a8e-04951d5c220b';
 //var appSource = 'app_wuye';
@@ -96,6 +96,17 @@ function checkMobile(mobile) {
 	} else {
 		return true;
 	}
+}
+// 时区转时间戳
+function GMTToStr(time){
+    var date = new Date(time)
+    var Str=date.getFullYear() + '-' +
+    (date.getMonth() + 1) + '-' + 
+    date.getDate() + ' ' + 
+    date.getHours() + ':' + 
+    date.getMinutes() + ':' + 
+    date.getSeconds()
+    return Str
 }
 //时间戳转时间
 function formatDate(timestamp) {
@@ -215,8 +226,6 @@ function getMyDay(date) {
 	if(date.getDay() == 6) week = "星期六"
 	return week;
 }
-
-//	uuid
 
 
 

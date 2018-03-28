@@ -43,22 +43,22 @@ define(['mui', 'mall'], function(mui, $) {
 
 		var old_back = mui.back;
 		mui.back = function() {
-			var sub = plus.webview.getWebviewById('goods_list_sub.html');
-			mui.fire(sub, 'delete');
+//			var sub = plus.webview.getWebviewById('goods_list_sub.html');
+//			mui.fire(sub, 'delete');
 			old_back();
 		}
 
 		//	接受goods_category_sub发来的categoryId;
-		$.receiveHandler(function(id, extra) {
-			plus.storage.setItem('categoryPriority', id);
-			console.log(plus.storage.getItem('categoryPriority'));
-			var category = id.split(':');
-			var categoryId = category[0];
-			var categoryName = category[1];
-			document.getElementById('category').innerText = categoryName;
-			var sub = plus.webview.getWebviewById('goods_list_sub.html');
-			mui.fire(sub, 'searchGoods');
-		}, 'sendId');
+//		$.receiveHandler(function(id, extra) {
+//			plus.storage.setItem('categoryPriority', id);
+//			console.log(plus.storage.getItem('categoryPriority'));
+//			var category = id.split(':');
+//			var categoryId = category[0];
+//			var categoryName = category[1];
+//			document.getElementById('category').innerText = categoryName;
+//			var sub = plus.webview.getWebviewById('goods_list_sub.html');
+//			mui.fire(sub, 'searchGoods');
+//		}, 'sendId');
 
 	});
 

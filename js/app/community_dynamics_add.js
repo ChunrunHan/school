@@ -30,6 +30,7 @@ define(['mui', 'mall'], function(mui, $) {
 				pickerBlur();
 				var text = document.getElementById('textarea').value;
 				var images = filenameArray();
+				var userId = plus.storage.getItem('userId');
 				console.log(images);
 				//						 "images":"1_20160724153600|1_20160724153602",
 				var newimg = [];
@@ -47,10 +48,9 @@ define(['mui', 'mall'], function(mui, $) {
 					return;
 				} else {
 					var Json = {
-						text: text,
-						userHide: 0,
-						images: newimg,
-						categoryId: 1
+						content: text,
+						userId: userId,
+						image: newimg
 					}
 					console.log(JSON.stringify(Json));
 					submitCommunity(Json);
@@ -63,7 +63,7 @@ define(['mui', 'mall'], function(mui, $) {
 		mui.back = function() {
 			pickerBlur();
 			clearFeedbackInput();
-			backDelImg();
+//			backDelImg();
 			var communitySubView = plus.webview.getWebviewById('community_dynamics_sub.html');
 			mui.fire(communitySubView, 'communityRefresh');
 			old_back();
@@ -101,12 +101,11 @@ define(['mui', 'mall'], function(mui, $) {
 		plus.nativeUI.showWaiting();
 		console.log('submitCommunity(' + JSON.stringify(json) + ')');
 		//	 submitCommunity({"text":"fffd","userHide":0,"images":["b986069d9a004c90a3012a84f5c22a71.png"],"categoryId":1})
-		//		plus.storage.setItem('token', demoToken);
-		urlBaseP = plus.storage.getItem('urlBaseP');
-		var url = urlBaseP + '/user/feed';
+		urlBase = plus.storage.getItem('urlBase');
+		var url = urlBase + '/campusSale/add';
 		$.post(url, json).then(function(data) {
 			console.log(JSON.stringify(data));
-			if(data.code === 0) {
+			if(data.errCode === 0) {
 				mui.toast('发表动态成功！');
 				clearFeedbackInput();
 				var html = '<div class="img-add imgadd">';
@@ -118,8 +117,6 @@ define(['mui', 'mall'], function(mui, $) {
 				var communitySubView = plus.webview.getWebviewById('community_dynamics_sub.html');
 				mui.fire(communitySubView, 'communityRefresh');
 				old_back();
-			} else if(data.code == 20) {
-				mui.toast('用户未绑定房屋');
 			} else {
 				mui.toast("发表动态失败！");
 			}
@@ -283,17 +280,17 @@ define(['mui', 'mall'], function(mui, $) {
 
 	//	oss单个文件删除
 	function delImgFromServer(file) {
-		bucketP = plus.storage.getItem('bucketP');
-		var delfile = [{
-			bucket: bucketP,
-			object: file
-		}]
+//		bucket = plus.storage.getItem('bucket');
+//		var delfile = [{
+//			bucket: bucketP,
+//			object: file
+//		}]
 		//		alert('bucket: '+ bucket);
 		plus.nativeUI.showWaiting('删除中');
-		console.log('删除的文件名字： ' + delfile);
+		console.log('删除的文件名字： ' + file);
 		urlBaseP = plus.storage.getItem('urlBaseP');
-		var url = urlBaseP + '/oss/del';
-		$.post(url, delfile).then(function(data) {
+		var url = urlBaseP + '/school/delOssImg/'+file;
+		$.get(url).then(function(data) {
 			plus.nativeUI.closeWaiting();
 			if(data.code === 0) {
 				mui.toast('图片删除成功！');
@@ -320,10 +317,7 @@ define(['mui', 'mall'], function(mui, $) {
 		var delfile = [];
 		for(var i = 0; i < filename.length; i++) {
 			bucketP = plus.storage.getItem('bucketP');
-			delfile.push({
-				bucket: bucketP,
-				object: filename[i]
-			});
+			delfile.push(filename[i]);
 		}
 		console.log('返回要删除的数据文件 ：' + delfile);
 		urlBaseP = plus.storage.getItem('urlBaseP');

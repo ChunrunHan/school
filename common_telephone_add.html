@@ -43,68 +43,22 @@
 				<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>
-						电话名称
+						联系部门
 					</label>
-					<input style="padding-right: 20px !important;" type="text" data-bind="name" placeholder="请输入电话名称" />
+					<input style="padding-right: 20px !important;" type="text" data-bind="contacts" placeholder="请输入电话名称" />
 				</div>
 				<div class="mui-input-row">
 					<label>
 						电话号码
 					</label>
-					<input style="padding-right: 20px !important;" type="tel" maxlength="11" size="11"  data-bind="number" placeholder="请输入电话号码" />
+					<input style="padding-right: 20px !important;" type="tel" maxlength="11" size="11"  data-bind="mobile" placeholder="请输入电话号码" />
 				</div>
-				<div class="mui-input-row">
-					<label>
-						优先级
-					</label>
-					<span class="mui-icon mui-icon-forward"></span>
-					<input id="priority-select" style="padding-right: 40px !important;" type="text" readonly=""  placeholder="请选择优先级" />
-				</div>
+					<textarea id="textarea" rows="5" data-bind="memo" maxlength="50" placeholder="备注描述"></textarea>
 				</form>
-				<!--<div class="btn-box">
-					<button id="tel-save" type="button" class="mui-btn mui-btn-primary">确认</button>
-					<button id="tel-cancel" type="button" class="mui-btn mui-btn-warning">取消</button>
-				</div>-->
-				<button type="button" class="mui-btn switch-commit tel-save" style="top:200px">保存电话</button>
+				<button type="button" class="mui-btn switch-commit tel-save" style="top:280px">保存电话</button>
 			</div>
 		</div>
 		
-		<div id="sheet2" class="mui-popover mui-popover-bottom mui-popover-action ">
-			<!-- 可选择菜单 -->
-			<ul class="mui-table-view" id='server'>
-				<li class="mui-table-view-cell">
-					<a class="priority-list" href="#sheet2" priority='5'>
-						高
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="priority-list" href="#sheet2" priority='4'>
-						较高
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="priority-list" href="#sheet2" priority='3'>
-						中
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="priority-list" href="#sheet2" priority='2'>
-						较低
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="priority-list" href="#sheet2" priority='1'>
-						低
-					</a>
-				</li>
-			</ul>
-			<!-- 取消菜单 -->
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell">
-					<a href="#sheet2"><b>取消</b></a>
-				</li>
-			</ul>
-		</div>
 		
 		<script src="js/common.js"></script>
 		<script src="js/lib/require.js"></script>

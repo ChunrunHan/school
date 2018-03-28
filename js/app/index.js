@@ -4,6 +4,31 @@ define(['mui', 'mall'], function(mui, $) {
 	mui.plusReady(function() {
 		console.log('index plus ready');
 		plus.screen.lockOrientation("portrait-primary");
+		
+		mui.preload({
+			url: 'common_telephone.html',
+			id: 'common_telephone.html'
+		});
+		
+		mui.preload({
+			url: 'community_dynamics.html',
+			id: 'community_dynamics.html'
+		});
+//		
+//		mui.preload({
+//			url: 'property_announcement',
+//			id: 'property_announcement'
+//		});
+//		
+//		mui.preload({
+//			url: 'property_announcement',
+//			id: 'property_announcement'
+//		});
+//		
+//		mui.preload({
+//			url: 'property_announcement',
+//			id: 'property_announcement'
+//		});
 
 		//	关闭右滑关闭功能
 		var wv = plus.webview.currentWebview();
@@ -45,21 +70,21 @@ define(['mui', 'mall'], function(mui, $) {
 		//		---------------------------------------------------------
 
 		//	用户信息
+//		$.tapHandler({
+//			selector: '.top-logo',
+//			url: 'user_edit.html'
+//		});
+
+		//	活动报名
 		$.tapHandler({
-			selector: '.top-logo',
-			url: 'user_edit.html'
+			selector: '.nine-goactivity',
+			url: 'property_announcement.html',
+			event: 'getPropertyAnno'
 		});
 
 		//	校园特卖
 		$.tapHandler({
 			selector: '.nine-gosale',
-			url: 'property_announcement.html',
-			event: 'getPropertyAnno'
-		});
-
-		//	活动报名
-		$.tapHandler({
-			selector: '.nine-goactivity',
 			url: 'community_dynamics.html',
 			event: 'getCoumunityDynamics'
 		});

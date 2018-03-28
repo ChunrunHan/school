@@ -6,6 +6,8 @@ define(['mui', 'md5', 'mall', 'updata'], function(mui, md5, $, updata) {
 		plus.screen.lockOrientation("portrait-primary");
 		plus.navigator.setStatusBarBackground("#c01e2f");
 		console.log(urlBase)
+		plus.storage.setItem('urlBase',urlBase);
+		plus.storage.setItem('bucket',"zaoyuan");
 		
 		//	跳转到忘记密码页面
 		$.tapHandler('#forget-password', 'forget_password.html');
@@ -68,8 +70,12 @@ define(['mui', 'md5', 'mall', 'updata'], function(mui, md5, $, updata) {
 						plus.storage.setItem('userId',data.dataList[0].id);
 						plus.storage.setItem('username',data.dataList[0].username);
 						plus.storage.setItem('avatar',data.dataList[0].avatar);
+						plus.storage.setItem('role',data.dataList[0].role.toString());
 						data.dataList[0].role = showRole[data.dataList[0].role];
-						plus.storage.setItem('role',data.dataList[0].role);
+						var isActive = document.getElementById("autoLogin").classList.contains("mui-active");
+						if(isActive) {
+							plus.storage.setItem('autologin', "true");
+						}
 						mui.openWindow({
 							url: 'index.html',
 							id: 'index.html'

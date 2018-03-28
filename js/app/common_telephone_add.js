@@ -3,77 +3,32 @@ define(['mui', 'mall'], function(mui, $) {
 		swipeBack: true //启用右滑关闭功能
 	});
 
-	var telPriority = 0;
-	var telPriorityName;
 	var old_back = mui.back;
 	mui.plusReady(function() {
 		plus.screen.lockOrientation("portrait-primary");
-		zoneId = plus.storage.getItem('zoneId');
-
-		//	选择优先级
-//		$.tapHandler({
-//			selector: '#priority-select',
-//			callback: function() {
-//				pickerBlur();
-//				mui('#sheet2').popover('toggle');
-//			}
-//		});
-//		//	入驻品类显示
-//		$.tapHandler({
-//			selector: '.priority-list',
-//			id: 'priority',
-//			callback: function(id) {
-//				console.log(id);
-//				telPriority = parseInt(id);
-//				switch(telPriority) {
-//					case 1:
-//						telPriorityName = '低';
-//						break;
-//					case 2:
-//						telPriorityName = '较低';
-//						break;
-//					case 3:
-//						telPriorityName = '中';
-//						break;
-//					case 4:
-//						telPriorityName = '较高';
-//						break;
-//					case 5:
-//						telPriorityName = '高';
-//						break;
-//				}
-//				document.getElementById('priority-select').value = telPriorityName;
-//				mui('#sheet2').popover('toggle');
-//			}
-//		});
 
 		$.tapHandler({
 			selector: '.tel-save',
 			callback: function(id) {
 				pickerBlur();
 				var json = $.serialize();
+				var memo = document.getElementById('textarea').value;
 				console.log(json)
-				if(json.name == '') {
-					mui.toast('电话名称不能为空');
+				if(json.contacts == '') {
+					mui.toast('联系部门不能为空');
 					return;
-				} else if(json.number == '') {
+				} else if(json.mobile == '') {
 					mui.toast('电话号码不能为空');
 					return;
 				} else {
-					if(telPriority == 0) {
-						mui.toast('请选择优先级');
-						return;
-					} else {
 						plus.nativeUI.showWaiting('保存中');
-						console.log('添加的数据(' + JSON.stringify(json) + ')');
+						
 						var addjson = mui.extend(addjson, json, {
-							zoneId: zoneId,
-							priority: telPriority,
-							available: true
+							memo: memo
 						});
-						addTel(addjson);
-					}
-
+					console.log('添加的数据(' + JSON.stringify(addjson) + ')');
+					addTel(addjson);
+					
 				}
 
 			}
@@ -84,12 +39,13 @@ define(['mui', 'mall'], function(mui, $) {
 	//	添加保存电话操作
 	function addTel(addjson) {
 		console.log('addTel(' + JSON.stringify(addjson) + ')');
-		//		plus.storage.setItem('token', demoToken);
-		urlBaseP = plus.storage.getItem('urlBaseP');
-		var url = urlBaseP + '/admin/phone';
+		urlBase = plus.storage.getItem('urlBase');
+		var url = urlBase + '/phone/add';
+		console.log(url)
 		$.post(url, addjson).then(function(data) {
 			plus.nativeUI.closeWaiting();
-			if(data.code === 0) {
+			console.log(data)
+			if(data.errCode === 0) {
 				mui.toast('电话添加成功');
 				clearTelAdd();
 				var list = plus.webview.getWebviewById('common_telephone_sub.html');
@@ -109,8 +65,6 @@ define(['mui', 'mall'], function(mui, $) {
 	}
 
 	function clearTelAdd() {
-		document.getElementById('priority-select').value = '';
-		telPriority = 0;
 		$.bind({
 			name: '',
 			number: ''

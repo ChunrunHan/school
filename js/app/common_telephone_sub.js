@@ -49,45 +49,45 @@ define(['mui', 'mall'], function(mui, $) {
 	}
 
 	//	删除电话
-	function delControl(categoryId) {
-		console.log('delCategory(' + categoryId + ')');
-		//	获得categoryId
-		var id = categoryId;
-		//	弹出删除框
-		mui.confirm('确定删除该号码吗？', '', ['是', '否'],
-			function(event) {
-				if(event.index === 0) {
-					plus.nativeUI.showWaiting('删除中');
-					delTel(id);
-				}
-			});
-	}
+//	function delControl(categoryId) {
+//		console.log('delCategory(' + categoryId + ')');
+//		//	获得categoryId
+//		var id = categoryId;
+//		//	弹出删除框
+//		mui.confirm('确定删除该号码吗？', '', ['是', '否'],
+//			function(event) {
+//				if(event.index === 0) {
+//					plus.nativeUI.showWaiting('删除中');
+//					delTel(id);
+//				}
+//			});
+//	}
 
 	//	删除电话请求
-	function delTel(id) {
-		console.log('delTel(' + id + ')');
-		urlBaseP = plus.storage.getItem('urlBaseP');
-		var url = urlBaseP + '/admin/phone/' + id;
-		$.del(url).then(function(data) {
-			console.log('got from server: ' + JSON.stringify(data));
-			plus.nativeUI.closeWaiting();
-			//	判断删除的分类是否有商品
-			if(data.code === 0) {
-				mui.toast('删除成功');
-				mui('#refreshContainer').pullRefresh().pulldownLoading();
-				var contentWebview = plus.webview.currentWebview();
-				contentWebview.evalJS("mui('#refreshContainer').pullRefresh().scrollTo(0,0,100)");
-				
-			} else {
-				//	删除页面元素
-				mui.toast('删除失败');	
-			}
-
-		}).fail(function(status) {
-			console.log('删除电话请求'+ status)
-			statusHandler(status);
-		});
-	}
+//	function delTel(id) {
+//		console.log('delTel(' + id + ')');
+//		urlBaseP = plus.storage.getItem('urlBaseP');
+//		var url = urlBaseP + '/admin/phone/' + id;
+//		$.del(url).then(function(data) {
+//			console.log('got from server: ' + JSON.stringify(data));
+//			plus.nativeUI.closeWaiting();
+//			//	判断删除的分类是否有商品
+//			if(data.code === 0) {
+//				mui.toast('删除成功');
+//				mui('#refreshContainer').pullRefresh().pulldownLoading();
+//				var contentWebview = plus.webview.currentWebview();
+//				contentWebview.evalJS("mui('#refreshContainer').pullRefresh().scrollTo(0,0,100)");
+//				
+//			} else {
+//				//	删除页面元素
+//				mui.toast('删除失败');	
+//			}
+//
+//		}).fail(function(status) {
+//			console.log('删除电话请求'+ status)
+//			statusHandler(status);
+//		});
+//	}
 
 	//	获取电话信息
 	function getData(page, pageSize, isUp) {
@@ -99,7 +99,7 @@ define(['mui', 'mall'], function(mui, $) {
 		$.get(url).then(function(data) {
 			plus.nativeUI.closeWaiting();
 			console.log('所有的电话信息(' + JSON.stringify(data) + ')');
-
+//{"errCode":0,"errMsg":"获取数据成功","totalRecords":1,"dataList":[{"id":1,"contacts":"校警","mobile":"110","memo":"学校警察"}]}
 			if(data.errCode === 0) {
 				document.querySelector('.search-result').classList.add('mui-hidden');
 				return $.render('tpl/common_telephone_sub_data.html', data);

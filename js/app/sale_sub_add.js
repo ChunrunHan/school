@@ -42,8 +42,8 @@ define(['mui', 'mall'], function(mui, $) {
 					newimg.push(name);
 				}
 				newimg = newimg.join('|');
-				
-				if(imgNum == 0 && text == ''){
+
+				if(imgNum == 0 && text == '') {
 					mui.toast('发布内容不能为空');
 					return;
 				} else {
@@ -63,7 +63,7 @@ define(['mui', 'mall'], function(mui, $) {
 		mui.back = function() {
 			pickerBlur();
 			clearFeedbackInput();
-//			backDelImg();
+			//			backDelImg();
 			var communitySubView = plus.webview.getWebviewById('community_dynamics_sub.html');
 			mui.fire(communitySubView, 'communityRefresh');
 			old_back();
@@ -173,38 +173,21 @@ define(['mui', 'mall'], function(mui, $) {
 		//	安卓7.0系统以上调用原生拍照
 		var version = plus.os.version;
 		var system = plus.os.name;
-//		if(parseInt(version) >= 7 && system == 'Android') {
-//			//		alert('调用原生拍照')
-//			var imgPath;
-//			PropertyPluginFn();
-//			plus.PropertyPlugin.nativeTakePhoto(null, function(result) {
-//				console.log(result);
-//				imgPath = result;
-//				var filearry = result.split('/');
-//				var filename = filearry[filearry.length - 1];
-//				appendFile("file://" + imgPath, filename);
-//			}, function(result) {
-//				console.log(result);
-//			});
-//			console.log(imgPath);
-//
-//		} else {
-			plus.camera.getCamera().captureImage(function(path) {
-				console.log('path: ' + path);
-				plus.io.resolveLocalFileSystemURL(path, function(entry) {
-					var path = entry.toLocalURL();
-					console.log(path);
-					var filename = entry.name;
-					console.log(filename);
-					appendFile(path, filename);
-				}, function(e) {
-					plus.nativeUI.toast("读取拍照文件错误：" + e.message);
-				});
-
-			}, function(e) {}, {
-				filename: "_doc/camera/"
+		plus.camera.getCamera().captureImage(function(path) {
+			console.log('path: ' + path);
+			plus.io.resolveLocalFileSystemURL(path, function(entry) {
+				var path = entry.toLocalURL();
+				console.log(path);
+				var filename = entry.name;
+				console.log(filename);
+				appendFile(path, filename);
+			}, function(e) {
+				plus.nativeUI.toast("读取拍照文件错误：" + e.message);
 			});
-//		}
+
+		}, function(e) {}, {
+			filename: "_doc/camera/"
+		});
 
 	}
 
@@ -280,20 +263,15 @@ define(['mui', 'mall'], function(mui, $) {
 
 	//	oss单个文件删除
 	function delImgFromServer(file) {
-//		bucket = plus.storage.getItem('bucket');
-//		var delfile = [{
-//			bucket: bucketP,
-//			object: file
-//		}]
-		//		alert('bucket: '+ bucket);
 		plus.nativeUI.showWaiting('删除中');
 		console.log('删除的文件名字： ' + file);
 		urlBase = plus.storage.getItem('urlBase');
-		var url = urlBase + '/delOssImg/'+file;
-		console.log(url)
+		var url = urlBase + '/delOssImg/' + file;
+		console.log('删除图片url:' + url)
 		$.get(url).then(function(data) {
+			console.log(JSON.stringify(data))
 			plus.nativeUI.closeWaiting();
-			if(data.code === 0) {
+			if(data.res.status === 204) {
 				mui.toast('图片删除成功！');
 				delImgFromLocal(file);
 				imgNum--;
@@ -306,52 +284,52 @@ define(['mui', 'mall'], function(mui, $) {
 			statusHandler(status);
 		})
 	}
-//	//	oss返回文件删除
-//	function backDelImg() {
-//		var imgNum = document.querySelectorAll('.img-src').length;
-//		if(imgNum == 0) {
-//			old_back();
-//			return false;
-//		}
-//		var filename = filenameArray();
-//		console.log(filename);
-//		var delfile = [];
-//		for(var i = 0; i < filename.length; i++) {
-//			bucketP = plus.storage.getItem('bucketP');
-//			delfile.push(filename[i]);
-//		}
-//		console.log('返回要删除的数据文件 ：' + delfile);
-//		urlBase = plus.storage.getItem('urlBase');
-//		var url = urlBase + '/oss/del';
-//		$.post(url, delfile).then(function(data) {
-//			plus.nativeUI.closeWaiting();
-//			if(data.code === 0) {
-//				var html = '<div class="img-add imgadd">';
-//				html += '		<img src="images/iconfont-tianjia.png" alt="" width="100%" height="auto"/>';
-//				html += '   </div>';
-//				html += '';
-//				document.querySelector('.img-all').innerHTML = html;
-//				document.querySelector('.img-all').style.textAlign = 'left';
-//				//	图片上传
-//				$.tapHandler({
-//					selector: '.imgadd',
-//					callback: function() {
-//						showActionSheetone();
-//						console.log('点击上传图片按钮了');
-//						return false;
-//					}
-//				});
-//				imgNum = 0;
-//				imgaddShow(imgNum);
-//				old_back();
-//			}
-//
-//		}).fail(function(status) {
-//			console.log('oss返回文件删除' + status)
-//			statusHandler(status);
-//			old_back();
-//		})
-//	}
+	//	//	oss返回文件删除
+	//	function backDelImg() {
+	//		var imgNum = document.querySelectorAll('.img-src').length;
+	//		if(imgNum == 0) {
+	//			old_back();
+	//			return false;
+	//		}
+	//		var filename = filenameArray();
+	//		console.log(filename);
+	//		var delfile = [];
+	//		for(var i = 0; i < filename.length; i++) {
+	//			bucketP = plus.storage.getItem('bucketP');
+	//			delfile.push(filename[i]);
+	//		}
+	//		console.log('返回要删除的数据文件 ：' + delfile);
+	//		urlBase = plus.storage.getItem('urlBase');
+	//		var url = urlBase + '/oss/del';
+	//		$.post(url, delfile).then(function(data) {
+	//			plus.nativeUI.closeWaiting();
+	//			if(data.code === 0) {
+	//				var html = '<div class="img-add imgadd">';
+	//				html += '		<img src="images/iconfont-tianjia.png" alt="" width="100%" height="auto"/>';
+	//				html += '   </div>';
+	//				html += '';
+	//				document.querySelector('.img-all').innerHTML = html;
+	//				document.querySelector('.img-all').style.textAlign = 'left';
+	//				//	图片上传
+	//				$.tapHandler({
+	//					selector: '.imgadd',
+	//					callback: function() {
+	//						showActionSheetone();
+	//						console.log('点击上传图片按钮了');
+	//						return false;
+	//					}
+	//				});
+	//				imgNum = 0;
+	//				imgaddShow(imgNum);
+	//				old_back();
+	//			}
+	//
+	//		}).fail(function(status) {
+	//			console.log('oss返回文件删除' + status)
+	//			statusHandler(status);
+	//			old_back();
+	//		})
+	//	}
 	//	本地删除
 	function delImgFromLocal(file) {
 		var imgbox = document.getElementById(file);

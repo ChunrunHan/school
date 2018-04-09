@@ -8,7 +8,7 @@ define(['mui', 'mall'], function(mui, $) {
 		plus.screen.lockOrientation("portrait-primary");
 		//客服电话
 		document.getElementById("call").addEventListener('tap', function() {
-			plus.device.dial("13361213969");
+			plus.device.dial("17863253292");
 		});
 	});
 

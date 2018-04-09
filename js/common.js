@@ -56,8 +56,8 @@ var require = {
 };
 
 //var urlBase = 'http://www.rainrain.xin:12345/school';
-var urlBase = 'http://192.168.31.13:12345/school';
-//var urlBase = 'http://192.168.1.108:12345/school'
+//var urlBase = 'http://192.168.31.13:12345/school';
+var urlBase = 'http://192.168.1.100:12345/school'
 var bucketP;
 //var appKey = '0de446ad-eae2-4e55-8a8e-04951d5c220b';
 //var appSource = 'app_wuye';
@@ -778,6 +778,32 @@ function pickerBlur() {
 //	返回当前时间戳
 function currentTime() {
 	var timestamp = new Date();
+	var year = timestamp.getFullYear();
+	var month = timestamp.getMonth() + 1;
+	var date = timestamp.getDate();
+	var hour = timestamp.getHours();
+	var minute = timestamp.getMinutes();
+	if(month < 10) {
+		month = '0' + month;
+	}
+	if(date < 10) {
+		date = '0' + date;
+	}
+	if(hour < 10) {
+		hour = '0' + hour;
+	}
+	if(minute < 10) {
+		minute = '0' + minute;
+	}
+	var currentdate = year + "/" + month + "/" + date + " " + hour + ":" + minute;
+	var date = new Date(currentdate);
+	currentdate = date.getTime();
+	return currentdate;
+}
+
+//	返回当前时间戳
+function currentTimeItem(item) {
+	var timestamp = new Date(item);
 	var year = timestamp.getFullYear();
 	var month = timestamp.getMonth() + 1;
 	var date = timestamp.getDate();

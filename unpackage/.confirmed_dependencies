@@ -21,7 +21,12 @@
 			"vehicle_management.html",
 			"critica_property.html",
 			"setting.html",
-			"about.html"
+			"about.html",
+			"repair.html",
+			"sale.html",
+			"activity.html",
+			"study.html",
+			"work.html"
 		],
 		"resources": []
 	},
@@ -199,6 +204,47 @@
 	"community_dynamics_sub.html": {
 		"refer": [
 			"show_img.html"
+		]
+	},
+	"repair.html": {
+		"resources": [
+			"repair_sub.html"
+		],
+		"refer": [
+			"repair_sub.html"
+		]
+	},
+	"sale.html": {
+		"resources": [
+			"sale_sub.html"
+		],
+		"refer": [
+			"sale_sub.html",
+			"sale_sub_add.html"
+		]
+	},
+	"activity.html": {
+		"resources": [
+			"activity_sub.html"
+		],
+		"refer": [
+			"activity_sub.html"
+		]
+	},
+	"study.html": {
+		"resources": [
+			"study_sub.html"
+		],
+		"refer": [
+			"study_sub.html"
+		]
+	},
+	"work.html": {
+		"resources": [
+			"work_sub.html"
+		],
+		"refer": [
+			"work_sub.html"
 		]
 	}
 }

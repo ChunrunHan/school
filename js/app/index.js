@@ -11,24 +11,24 @@ define(['mui', 'mall'], function(mui, $) {
 		});
 		
 		mui.preload({
-			url: 'community_dynamics.html',
-			id: 'community_dynamics.html'
+			url: 'sale.html',
+			id: 'sale.html'
 		});
-//		
-//		mui.preload({
-//			url: 'property_announcement',
-//			id: 'property_announcement'
-//		});
-//		
-//		mui.preload({
-//			url: 'property_announcement',
-//			id: 'property_announcement'
-//		});
-//		
-//		mui.preload({
-//			url: 'property_announcement',
-//			id: 'property_announcement'
-//		});
+		
+		mui.preload({
+			url: 'activity.html',
+			id: 'activity.html'
+		});
+		
+		mui.preload({
+			url: 'study.html',
+			id: 'study.html'
+		});
+		
+		mui.preload({
+			url: 'work.html',
+			id: 'work.html'
+		});
 
 		//	关闭右滑关闭功能
 		var wv = plus.webview.currentWebview();
@@ -38,7 +38,7 @@ define(['mui', 'mall'], function(mui, $) {
 
 		var avatar = plus.storage.getItem('avatar');
 		var nickname = plus.storage.getItem('username');
-		var rolename = plus.storage.getItem('role');
+		var rolename = plus.storage.getItem('roleName');
 		
 		if(avatar !== null) {
 			userimg = "http://zaoyuan.oss-cn-qingdao.aliyuncs.com/" + avatar + '!thumbnail';
@@ -69,38 +69,32 @@ define(['mui', 'mall'], function(mui, $) {
 
 		//		---------------------------------------------------------
 
-		//	用户信息
-//		$.tapHandler({
-//			selector: '.top-logo',
-//			url: 'user_edit.html'
-//		});
-
 		//	活动报名
 		$.tapHandler({
 			selector: '.nine-goactivity',
-			url: 'property_announcement.html',
-			event: 'getPropertyAnno'
+			url: 'activity.html',
+			event: 'getActivity'
 		});
 
 		//	校园特卖
 		$.tapHandler({
 			selector: '.nine-gosale',
-			url: 'community_dynamics.html',
-			event: 'getCoumunityDynamics'
+			url: 'sale.html',
+			event: 'getSale'
 		});
 
 		//	学习交流
 		$.tapHandler({
 			selector: '.nine-gostudy',
-			url: 'repair.html',
-			event: 'getRepair'
+			url: 'study.html',
+			event: 'getStudy'
 		});
 
 		//	勤工俭学
 		$.tapHandler({
 			selector: '.nine-gowork',
-			url: 'advise_property.html',
-			event: 'getAdivise'
+			url: 'work.html',
+			event: 'getWork'
 		});
 
 		//	常用电话

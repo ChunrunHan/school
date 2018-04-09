@@ -225,7 +225,12 @@
 					"vehicle_management.html",
 					"critica_property.html",
 					"setting.html",
-					"about.html"
+					"about.html",
+					"repair.html",
+					"sale.html",
+					"activity.html",
+					"study.html",
+					"work.html"
 				],
 				"priority": 0
 			},
@@ -407,6 +412,43 @@
 					"show_img.html"
 				],
 				"priority": 0
+			},
+			"repair.html": {
+				"resources": [
+					"repair_sub.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"sale.html": {
+				"resources": [
+					"sale_sub.html"
+				],
+				"refer": [
+					"sale_sub_add.html"
+				],
+				"priority": 0
+			},
+			"activity.html": {
+				"resources": [
+					"activity_sub.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"study.html": {
+				"resources": [
+					"study_sub.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"work.html": {
+				"resources": [
+					"work_sub.html"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
@@ -545,7 +587,6 @@
 				"feedback.html",
 				"images/2.svg",
 				"js/lib/q.min.js",
-				"repair_sub.html",
 				"js/app/common_telephone_sub.js",
 				"committee_announcement_add.html",
 				"userauth_pending.html",
@@ -629,7 +670,6 @@
 				"js/lib/carCity.js",
 				"js/app/advise_property.js",
 				"images/no.svg",
-				"repair.html",
 				"js/lib/aliyun-oss-sdk.js",
 				"js/app/expired_parking_sub.js",
 				"vehicle_reverse_detail.html",

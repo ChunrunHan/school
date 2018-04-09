@@ -1,0 +1,19 @@
+{{#dataList}}
+<li>
+	<p>
+		<img class="user-logo" src="{{avatar}}" alt="" width="40px" height="40px" onerror="javascript:this.src='images/default_header.png'"/>
+		<span class="user-name color-black">{{username}}</span>
+		<img class="delInfo {{delShow}}"  infoId="{{id}}" style="float: right; position: relative;top: 10px;" src="images/delete.svg" alt="" width="20px" height="20px" />
+	</p>
+	<p class="content-text color-black">{{content}}</p>
+	<div class="content-img {{boxshow}}">
+		{{#image}}
+		<img class="{{show}}" src="{{.}}" height="auto" width="30%"  onerror="javascript:this.src='images/default_goods.png'">
+		{{/image}}
+	</div>
+
+	<div class="comment-bottom mui-clearfix">
+		<span class="mui-pull-left">{{createTime}}</span>
+	</div>
+</li>
+{{/dataList}}

@@ -63,9 +63,8 @@ define(['mui', 'mall'], function(mui, $) {
 		mui.back = function() {
 			pickerBlur();
 			clearFeedbackInput();
-			//			backDelImg();
-			var communitySubView = plus.webview.getWebviewById('community_dynamics_sub.html');
-			mui.fire(communitySubView, 'communityRefresh');
+			var sale = plus.webview.getWebviewById('sale_sub.html');
+			mui.fire(sale, 'saleRefresh');
 			old_back();
 		}
 

@@ -113,8 +113,8 @@ define(['mui', 'mall'], function(mui, $) {
 				html += '';
 				document.querySelector('.img-all').innerHTML = html;
 				document.querySelector('.img-all').style.textAlign = 'left';
-				var communitySubView = plus.webview.getWebviewById('sale_sub.html');
-				mui.fire(communitySubView, 'communityRefresh');
+				var sale = plus.webview.getWebviewById('sale_sub.html');
+				mui.fire(sale, 'saleRefresh');
 				old_back();
 			} else {
 				mui.toast("发表动态失败！");
